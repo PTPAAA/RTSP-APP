@@ -34,6 +34,7 @@ import com.rtsp.camera.model.FlashMode
 import com.rtsp.camera.model.StreamingState
 import com.rtsp.camera.service.RTSPService
 import com.rtsp.camera.util.PreferenceHelper
+import com.rtsp.camera.lighting.ScreenFlashManager
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -52,6 +53,11 @@ class MainActivity : AppCompatActivity() {
     private var rtspService: RTSPService? = null
     private var serviceBound = false
     private var pendingStartStreaming = false
+    
+    // 屏幕补光管理器
+    private var screenFlashManager: ScreenFlashManager? = null
+    private var saverFlashManager: ScreenFlashManager? = null  // 挂机模式用
+    private var lowLightEnabled = false
 
     private val streamingPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
@@ -112,13 +118,39 @@ class MainActivity : AppCompatActivity() {
             updateFlashUI(newMode)
         }
 
-        // 2. 夜视按钮
+        // 2. 低光增强按钮 (原夜视按钮)
         updateNightVisionUI(prefs.enableNightVision)
         binding.btnNightVision.setOnClickListener {
-            val newState = !prefs.enableNightVision
-            prefs.enableNightVision = newState
-            rtspService?.setNightVisionEnabled(newState)
-            updateNightVisionUI(newState)
+            lowLightEnabled = !lowLightEnabled
+            prefs.enableNightVision = lowLightEnabled
+            
+            // 启用 GPU 低光增强
+            rtspService?.setLowLightEnhancement(lowLightEnabled)
+            
+            // 根据摄像头类型选择补光方式
+            val useBackCamera = prefs.useBackCamera
+            if (lowLightEnabled) {
+                if (useBackCamera) {
+                    // 后置摄像头：使用闪光灯
+                    rtspService?.setFlashMode(FlashMode.ON)
+                    screenFlashManager?.disable()
+                } else {
+                    // 前置摄像头：使用屏幕补光（半透明模式，不遮挡时钟）
+                    screenFlashManager?.stealthMode = true
+                    screenFlashManager?.enable()
+                }
+            } else {
+                // 关闭补光
+                if (useBackCamera) {
+                    rtspService?.setFlashMode(FlashMode.OFF)
+                } else {
+                    screenFlashManager?.disable()
+                }
+            }
+            
+            updateNightVisionUI(lowLightEnabled)
+            val modeText = if (useBackCamera) "闪光灯" else "屏幕补光"
+            Toast.makeText(this, if (lowLightEnabled) "低光增强已开启 ($modeText)" else "低光增强已关闭", Toast.LENGTH_SHORT).show()
         }
 
         // 3. 旋转按钮
@@ -176,7 +208,34 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.oledSaverOverlay.setOnClickListener {
-            enableOledSaverMode(false)
+            val now = System.currentTimeMillis()
+            // 检查是否超时，超时则重置计数
+            if (now - lastSaverClickTime > SAVER_EXIT_CLICK_TIMEOUT) {
+                saverExitClickCount = 0
+            }
+            lastSaverClickTime = now
+            saverExitClickCount++
+            
+            if (saverExitClickCount >= SAVER_EXIT_CLICK_REQUIRED) {
+                saverExitClickCount = 0
+                enableOledSaverMode(false)
+            }
+        }
+        
+        // 9. 初始化屏幕补光管理器
+        screenFlashManager = ScreenFlashManager(window, binding.screenFlashOverlay).apply {
+            intervalMs = 5000  // 每 5 秒补光一次
+            flashDurationMs = 500  // 补光持续 500ms
+            autoMode = false  // 手动控制
+            stealthMode = true  // 半透明模式
+        }
+        
+        // 10. 初始化挂机模式补光管理器（使用 saverFlashOverlay，位于时钟下方）
+        saverFlashManager = ScreenFlashManager(window, binding.saverFlashOverlay).apply {
+            intervalMs = 5000  // 每 5 秒补光一次
+            flashDurationMs = 800  // 补光持续 800ms（更长以便捕捉画面）
+            autoMode = false  // 手动控制
+            stealthMode = true  // 半透明模式，不遮挡时钟
         }
     }
 
@@ -308,6 +367,12 @@ class MainActivity : AppCompatActivity() {
     private var gravitySensorListener: android.hardware.SensorEventListener? = null
     private var currentSaverRotation = 0f
     
+    // 挂机模式退出计数器（需要连续点击 5 次）
+    private var saverExitClickCount = 0
+    private var lastSaverClickTime = 0L
+    private val SAVER_EXIT_CLICK_TIMEOUT = 2000L  // 2 秒内完成 5 次点击
+    private val SAVER_EXIT_CLICK_REQUIRED = 5
+    
     private fun enableOledSaverMode(enable: Boolean) {
         binding.oledSaverOverlay.isVisible = enable
         val windowController = WindowCompat.getInsetsController(window, window.decorView)
@@ -325,6 +390,11 @@ class MainActivity : AppCompatActivity() {
             // 启动重力传感器
             startGravitySensor()
             
+            // 挂机模式下启用屏幕补光（如果低光增强开启且是前置摄像头）
+            if (lowLightEnabled && !prefs.useBackCamera) {
+                saverFlashManager?.enable()
+            }
+            
             Toast.makeText(this, "点击屏幕退出", Toast.LENGTH_SHORT).show()
         } else {
             windowController.show(WindowInsetsCompat.Type.systemBars())
@@ -337,6 +407,9 @@ class MainActivity : AppCompatActivity() {
             
             // 停止重力传感器
             stopGravitySensor()
+            
+            // 停止挂机模式补光
+            saverFlashManager?.disable()
         }
     }
     
@@ -404,11 +477,6 @@ class MainActivity : AppCompatActivity() {
                 val now = java.util.Date()
                 binding.saverTimeText.text = timeFormat.format(now)
                 binding.saverDateText.text = dateFormat.format(now)
-                
-                // 更新状态
-                val isStreaming = rtspService?.streamingState?.value is StreamingState.Streaming
-                binding.saverStatusText.text = if (isStreaming) "● 推流中" else "○ 待机"
-                binding.saverStatusText.setTextColor(if (isStreaming) 0xFF1AFF1A.toInt() else 0xFF666666.toInt())
                 
                 // 每 30 秒随机移动位置 (防烧屏)
                 val seconds = java.util.Calendar.getInstance().get(java.util.Calendar.SECOND)
@@ -568,5 +636,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+        screenFlashManager?.release()
+        screenFlashManager = null
+        saverFlashManager?.release()
+        saverFlashManager = null
     }
 }

@@ -24,6 +24,14 @@
             android:layout_gravity="center"/>
     </FrameLayout>
 
+    <!-- 屏幕补光 Overlay (低光模式使用) -->
+    <View
+        android:id="@+id/screenFlashOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:visibility="gone"/>
+
     <!-- 录像参数信息 (未推流时显示) -->
     <LinearLayout
         android:id="@+id/configInfoLayout"
@@ -236,6 +244,14 @@
         android:visibility="gone"
         android:clickable="true"
         android:focusable="true">
+        
+        <!-- 屏幕补光层 (位于时钟下方，半透明不遮挡时钟) -->
+        <View
+            android:id="@+id/saverFlashOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00FFFFFF"
+            android:visibility="gone"/>
 
         <!-- 动态移动的时钟 (防烧屏) -->
         <LinearLayout
@@ -244,17 +260,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:minWidth="400dp">
             
             <TextView
                 android:id="@+id/saverTimeText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="12:34"
+                android:text="12:34:56"
                 android:textColor="#1AFF1A"
-                android:textSize="48sp"
+                android:textSize="64sp"
                 android:fontFamily="monospace"
-                android:letterSpacing="0.1"/>
+                android:letterSpacing="0.05"/>
             
             <TextView
                 android:id="@+id/saverDateText"
@@ -262,17 +279,8 @@
                 android:layout_height="wrap_content"
                 android:text="2026-01-30"
                 android:textColor="#0D800D"
-                android:textSize="16sp"
+                android:textSize="20sp"
                 android:fontFamily="monospace"/>
-            
-            <TextView
-                android:id="@+id/saverStatusText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="● 推流中"
-                android:textColor="#1AFF1A"
-                android:textSize="14sp"/>
         </LinearLayout>
         
         <!-- 状态点 (也会移动) -->
@@ -283,15 +291,6 @@
             android:layout_gravity="top|start"
             android:background="@drawable/status_dot"
             android:layout_margin="20dp"/>
-        
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginBottom="32dp"
-            android:text="点击屏幕退出"
-            android:textColor="#333333"
-            android:textSize="12sp"/>
 
     </FrameLayout>
 

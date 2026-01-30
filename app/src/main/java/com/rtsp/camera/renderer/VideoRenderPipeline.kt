@@ -245,6 +245,33 @@ class VideoRenderPipeline(
     }
     
     /**
+     * 设置低光增强
+     * @param enabled 是否启用
+     * @param denoise 降噪强度 (0.0-1.0)
+     * @param exposure 曝光补偿 (1.0-4.0)
+     * @param contrast 局部对比度 (0.0-1.0)
+     */
+    fun setLowLightEnhancement(
+        enabled: Boolean,
+        denoise: Float = 0.5f,
+        exposure: Float = 2.0f,
+        contrast: Float = 0.3f
+    ) {
+        renderHandler?.post {
+            glRenderer?.setLowLightEnhancement(enabled, denoise, exposure, contrast)
+        }
+        // 更新 OSD 状态
+        updateLowLightStatus(enabled)
+    }
+    
+    /**
+     * 更新低光增强状态 (用于 OSD 显示)
+     */
+    private fun updateLowLightStatus(enabled: Boolean) {
+        // 可以在这里添加 OSD 显示低光增强状态的逻辑
+    }
+    
+    /**
      * 更新电池信息
      */
     fun updateBatteryInfo(level: Int, temperature: Float, charging: Boolean) {

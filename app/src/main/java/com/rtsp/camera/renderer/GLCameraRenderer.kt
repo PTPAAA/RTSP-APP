@@ -41,7 +41,7 @@ class GLCameraRenderer(
             }
         """
         
-        // 相机纹理片段着色器 (外部纹理 OES)
+        // 相机纹理片段着色器 (外部纹理 OES) - 高级低光增强版本
         private const val CAMERA_FRAGMENT_SHADER = """
             #extension GL_OES_EGL_image_external : require
             precision mediump float;
@@ -50,20 +50,109 @@ class GLCameraRenderer(
             uniform samplerExternalOES uCameraTexture;
             uniform sampler2D uOsdTexture;
             uniform float uOsdEnabled;
-            uniform float uBrightness; // 夜视增强：亮度 (1.0 = 正常)
-            uniform float uContrast;   // 夜视增强：对比度 (1.0 = 正常)
+            uniform float uBrightness;      // 亮度 (1.0 = 正常)
+            uniform float uContrast;        // 对比度 (1.0 = 正常)
+            uniform vec2 uResolution;       // 画面分辨率
+            uniform float uDenoiseStrength; // 降噪强度 (0.0-1.0)
+            uniform float uToneMapping;     // Tone Mapping 曝光补偿 (1.0-4.0)
+            uniform float uLocalContrast;   // 局部对比度增强 (0.0-1.0)
+            uniform float uLowLightEnabled; // 低光增强开关
+            
+            // Bilateral 降噪 - 边缘保持滤波
+            vec3 bilateralDenoise(vec2 uv, float strength) {
+                vec3 center = texture2D(uCameraTexture, uv).rgb;
+                if (strength < 0.01) return center;
+                
+                vec3 sum = vec3(0.0);
+                float weightSum = 0.0;
+                float sigma = 0.1 + strength * 0.3;
+                vec2 texelSize = 1.0 / uResolution;
+                
+                // 5x5 采样
+                for (int x = -2; x <= 2; x++) {
+                    for (int y = -2; y <= 2; y++) {
+                        vec2 offset = vec2(float(x), float(y)) * texelSize;
+                        vec3 sampleColor = texture2D(uCameraTexture, uv + offset).rgb;
+                        
+                        // 空间权重
+                        float spatialDist = length(vec2(float(x), float(y))) / 2.0;
+                        float spatialWeight = exp(-spatialDist * spatialDist);
+                        
+                        // 颜色相似度权重
+                        float colorDist = length(sampleColor - center);
+                        float colorWeight = exp(-colorDist * colorDist / (2.0 * sigma * sigma));
+                        
+                        float weight = spatialWeight * colorWeight;
+                        sum += sampleColor * weight;
+                        weightSum += weight;
+                    }
+                }
+                return sum / max(weightSum, 0.001);
+            }
+            
+            // Log Tone Mapping - 暗部细节恢复
+            vec3 logToneMap(vec3 color, float exposure) {
+                if (exposure <= 1.0) return color;
+                color *= exposure;
+                return log(1.0 + color) / log(1.0 + exposure);
+            }
+            
+            // 局部对比度增强 (CLAHE 简化版)
+            vec3 localContrastEnhance(vec3 color, vec2 uv, float strength) {
+                if (strength < 0.01) return color;
+                
+                float luma = dot(color, vec3(0.299, 0.587, 0.114));
+                
+                // 采样周围区域计算局部平均亮度
+                float localAvg = 0.0;
+                vec2 texelSize = 1.0 / uResolution;
+                for (int x = -3; x <= 3; x += 2) {
+                    for (int y = -3; y <= 3; y += 2) {
+                        vec2 offset = vec2(float(x), float(y)) * texelSize * 3.0;
+                        vec3 s = texture2D(uCameraTexture, uv + offset).rgb;
+                        localAvg += dot(s, vec3(0.299, 0.587, 0.114));
+                    }
+                }
+                localAvg /= 16.0;
+                
+                // 局部对比度调整
+                float boost = luma + (luma - localAvg) * strength;
+                float scale = boost / max(luma, 0.001);
+                scale = clamp(scale, 0.5, 2.0);
+                
+                return color * scale;
+            }
+            
             void main() {
-                vec4 cameraColor = texture2D(uCameraTexture, vTexCoord);
+                vec3 color;
                 
-                // 应用夜视增强 (亮度和对比度调整)
-                vec3 color = cameraColor.rgb;
-                color = color * uBrightness;                    // 亮度
-                color = (color - 0.5) * uContrast + 0.5;       // 对比度
-                color = clamp(color, 0.0, 1.0);                // 限制范围
-                cameraColor = vec4(color, cameraColor.a);
+                if (uLowLightEnabled > 0.5) {
+                    // === 低光增强管线 ===
+                    
+                    // Stage 1: Bilateral 降噪
+                    color = bilateralDenoise(vTexCoord, uDenoiseStrength);
+                    
+                    // Stage 2: Tone Mapping 暗部增强
+                    color = logToneMap(color, uToneMapping);
+                    
+                    // Stage 3: 局部对比度增强
+                    color = localContrastEnhance(color, vTexCoord, uLocalContrast);
+                    
+                    // Stage 4: 传统亮度/对比度微调
+                    color = color * uBrightness;
+                    color = (color - 0.5) * uContrast + 0.5;
+                } else {
+                    // === 普通模式 ===
+                    color = texture2D(uCameraTexture, vTexCoord).rgb;
+                    color = color * uBrightness;
+                    color = (color - 0.5) * uContrast + 0.5;
+                }
                 
+                color = clamp(color, 0.0, 1.0);
+                vec4 cameraColor = vec4(color, 1.0);
+                
+                // OSD 叠加
                 vec4 osdColor = texture2D(uOsdTexture, vOsdTexCoord);
-                // 使用 alpha 混合叠加 OSD
                 float osdAlpha = osdColor.a * uOsdEnabled;
                 gl_FragColor = mix(cameraColor, osdColor, osdAlpha);
             }
@@ -111,6 +200,13 @@ class GLCameraRenderer(
     private var scaleXHandle = 0
     private var scaleYHandle = 0
     
+    // 低光增强 uniform handles
+    private var resolutionHandle = 0
+    private var denoiseStrengthHandle = 0
+    private var toneMappingHandle = 0
+    private var localContrastHandle = 0
+    private var lowLightEnabledHandle = 0
+    
     // 纹理
     private var cameraTextureId = 0
     private var osdTextureId = 0
@@ -133,6 +229,12 @@ class GLCameraRenderer(
     private var contrast = 1.0f    // 夜视对比度 (1.0 = 正常)
     private var scaleX = 1.0f      // 水平缩放 (1.0 = 正常)
     private var scaleY = 1.0f      // 垂直缩放 (1.0 = 正常)
+    
+    // 低光增强参数
+    private var lowLightEnabled = false
+    private var denoiseStrength = 0.5f   // 降噪强度 (0.0-1.0)
+    private var toneMapping = 2.0f       // 曝光补偿 (1.0-4.0)
+    private var localContrast = 0.3f     // 局部对比度 (0.0-1.0)
     
     // 帧可用回调
     private var frameAvailableListener: (() -> Unit)? = null
@@ -306,11 +408,18 @@ class GLCameraRenderer(
         scaleXHandle = GLES20.glGetUniformLocation(program, "uScaleX")
         scaleYHandle = GLES20.glGetUniformLocation(program, "uScaleY")
         
+        // 低光增强 uniform handles
+        resolutionHandle = GLES20.glGetUniformLocation(program, "uResolution")
+        denoiseStrengthHandle = GLES20.glGetUniformLocation(program, "uDenoiseStrength")
+        toneMappingHandle = GLES20.glGetUniformLocation(program, "uToneMapping")
+        localContrastHandle = GLES20.glGetUniformLocation(program, "uLocalContrast")
+        lowLightEnabledHandle = GLES20.glGetUniformLocation(program, "uLowLightEnabled")
+        
         // 删除着色器对象 (已链接到程序)
         GLES20.glDeleteShader(vertexShader)
         GLES20.glDeleteShader(fragmentShader)
         
-        Log.d(TAG, "OpenGL shaders compiled and linked")
+        Log.d(TAG, "OpenGL shaders compiled and linked (low-light enhancement enabled)")
     }
     
     /**
@@ -446,6 +555,34 @@ class GLCameraRenderer(
     }
     
     /**
+     * 设置低光增强参数
+     * @param enabled 是否启用低光增强
+     * @param denoise 降噪强度 (0.0-1.0)
+     * @param exposure Tone Mapping 曝光补偿 (1.0-4.0)
+     * @param contrast 局部对比度增强 (0.0-1.0)
+     */
+    fun setLowLightEnhancement(
+        enabled: Boolean,
+        denoise: Float = 0.5f,
+        exposure: Float = 2.0f,
+        contrast: Float = 0.3f
+    ) {
+        lowLightEnabled = enabled
+        if (enabled) {
+            denoiseStrength = denoise.coerceIn(0f, 1f)
+            toneMapping = exposure.coerceIn(1f, 4f)
+            localContrast = contrast.coerceIn(0f, 1f)
+        }
+        Log.d(TAG, "Low-light enhancement: enabled=$enabled, denoise=$denoiseStrength, " +
+                   "toneMapping=$toneMapping, localContrast=$localContrast")
+    }
+    
+    /**
+     * 检查低光增强是否启用
+     */
+    fun isLowLightEnabled(): Boolean = lowLightEnabled
+    
+    /**
      * 设置帧可用回调
      */
     fun setOnFrameAvailableListener(listener: () -> Unit) {
@@ -562,6 +699,13 @@ class GLCameraRenderer(
         // 设置画面缩放
         GLES20.glUniform1f(scaleXHandle, scaleX)
         GLES20.glUniform1f(scaleYHandle, scaleY)
+        
+        // 设置低光增强参数
+        GLES20.glUniform2f(resolutionHandle, targetWidth.toFloat(), targetHeight.toFloat())
+        GLES20.glUniform1f(denoiseStrengthHandle, denoiseStrength)
+        GLES20.glUniform1f(toneMappingHandle, toneMapping)
+        GLES20.glUniform1f(localContrastHandle, localContrast)
+        GLES20.glUniform1f(lowLightEnabledHandle, if (lowLightEnabled) 1.0f else 0.0f)
         
         // 绘制
         GLES20.glDrawArrays(GLES20.GL_TRIANGLE_STRIP, 0, 4)

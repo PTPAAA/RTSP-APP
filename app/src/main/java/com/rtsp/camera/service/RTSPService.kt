@@ -556,6 +556,25 @@ class RTSPService : Service() {
     }
     
     /**
+     * 设置低光增强（GPU 管线）
+     * @param enabled 是否启用
+     * @param denoise 降噪强度 (0.0-1.0)
+     * @param exposure 曝光补偿 (1.0-4.0)
+     * @param contrast 局部对比度 (0.0-1.0)
+     */
+    fun setLowLightEnhancement(
+        enabled: Boolean,
+        denoise: Float = 0.5f,
+        exposure: Float = 2.0f,
+        contrast: Float = 0.3f
+    ) {
+        enableNightVision = enabled
+        mainRenderPipeline?.setLowLightEnhancement(enabled, denoise, exposure, contrast)
+        // 更新 OSD 显示
+        mainRenderPipeline?.updateNightVision(enabled)
+    }
+    
+    /**
      * 设置画面缩放（用于手动调整宽高比）
      * @param scaleX 水平缩放 (1.0 = 正常)
      * @param scaleY 垂直缩放 (1.0 = 正常)
