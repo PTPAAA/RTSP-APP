@@ -1,0 +1,485 @@
+---------------------------- PROCESS STARTED (21636) for package com.rtsp.camera ----------------------------
+2026-01-30 14:36:06.294 21636-21636 NetworkSecurityConfig   com.rtsp.camera                      D  No Network Security Config specified, using platform default
+2026-01-30 14:36:06.295 21636-21636 NetworkSecurityConfig   com.rtsp.camera                      D  No Network Security Config specified, using platform default
+2026-01-30 14:36:06.425 21636-21636 AppCompatDelegate       com.rtsp.camera                      D  Checking for metadata for AppLocalesMetadataHolderService : Service not found
+2026-01-30 14:36:06.504 21636-21636 com.rtsp.camer          com.rtsp.camera                      W  Accessing hidden method Landroid/view/View;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z (greylist, reflection, allowed)
+2026-01-30 14:36:06.603 21636-21636 com.rtsp.camer          com.rtsp.camera                      W  Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (greylist, reflection, allowed)
+2026-01-30 14:36:06.714 21636-21685 Adreno                  com.rtsp.camera                      I  QUALCOMM build                   : 0620ce3, I8531a63cb7
+                                                                                                    Build Date                       : 02/04/20
+                                                                                                    OpenGL ES Shader Compiler Version: EV031.25.03.07
+                                                                                                    Local Branch                     : mybranchea4724a1-c505-f1f1-a622-5cb90179c3e0
+                                                                                                    Remote Branch                    : quic/gfx-adreno.lnx.1.0.r48-rel
+                                                                                                    Remote Branch                    : NONE
+                                                                                                    Reconstruct Branch               : NOTHING
+2026-01-30 14:36:06.715 21636-21685 Adreno                  com.rtsp.camera                      I  Build Config                     : S L 6.0.7 AArch64
+2026-01-30 14:36:06.731 21636-21685 Adreno                  com.rtsp.camera                      I  PFP: 0x005ff112, ME: 0x005ff066
+2026-01-30 14:36:06.735 21636-21685 libEGL                  com.rtsp.camera                      E  Driver indicates EGL 1.5 support, but does not have a critical API
+2026-01-30 14:36:06.794 21636-21685 Gralloc4                com.rtsp.camera                      I  mapper 4.x is not supported
+2026-01-30 14:36:06.795 21636-21685 Gralloc3                com.rtsp.camera                      W  mapper 3.x is not supported
+2026-01-30 14:36:11.324 21636-21636 LightSensorManager      com.rtsp.camera                      D  Light sensor stopped
+2026-01-30 14:36:11.325 21636-21636 RTSPService             com.rtsp.camera                      I  RTSPService destroyed, all resources released
+2026-01-30 14:36:12.244 21636-21697 ProfileInstaller        com.rtsp.camera                      D  Installing profile for com.rtsp.camera
+2026-01-30 14:36:16.459 21636-21636 MainActivity            com.rtsp.camera                      D  Button clicked, rtspService=true, serviceBound=true, state=com.rtsp.camera.model.StreamingState$Idle@f4a6eb2
+2026-01-30 14:36:17.970 21636-21636 RTSPService             com.rtsp.camera                      D  startStreaming called, currentState=com.rtsp.camera.model.StreamingState$Idle@f4a6eb2
+2026-01-30 14:36:17.970 21636-21636 RTSPService             com.rtsp.camera                      D  State allows starting, proceeding...
+2026-01-30 14:36:18.061 21636-21636 KeepAliveManager        com.rtsp.camera                      I  Starting keep-alive manager
+2026-01-30 14:36:18.068 21636-21636 KeepAliveManager        com.rtsp.camera                      D  WakeLock acquired
+2026-01-30 14:36:18.080 21636-21636 KeepAliveManager        com.rtsp.camera                      D  WifiLock acquired
+2026-01-30 14:36:18.084 21636-21636 KeepAliveManager        com.rtsp.camera                      D  Keep-alive alarm scheduled
+2026-01-30 14:36:18.085 21636-21636 KeepAliveManager        com.rtsp.camera                      I  Keep-alive manager started with all strategies
+2026-01-30 14:36:18.092 21636-21636 CameraManagerGlobal     com.rtsp.camera                      I  Connecting to camera service
+2026-01-30 14:36:18.099 21636-21636 libc                    com.rtsp.camera                      E  Access denied finding property "vendor.camera.aux.packagelist"
+2026-01-30 14:36:18.100 21636-21636 chatty                  com.rtsp.camera                      I  uid=10265(com.rtsp.camera) identical 3 lines
+2026-01-30 14:36:18.101 21636-21636 libc                    com.rtsp.camera                      E  Access denied finding property "vendor.camera.aux.packagelist"
+2026-01-30 14:36:18.101 21636-21696 libc                    com.rtsp.camera                      E  Access denied finding property "vendor.camera.aux.packagelist"
+2026-01-30 14:36:18.102 21636-21696 libc                    com.rtsp.camera                      E  Access denied finding property "vendor.camera.aux.packagelist"
+2026-01-30 14:36:18.102 21636-21696 CameraManagerGlobal     com.rtsp.camera                      W  ignore the torch status update of camera: 2
+2026-01-30 14:36:18.102 21636-21696 libc                    com.rtsp.camera                      E  Access denied finding property "vendor.camera.aux.packagelist"
+2026-01-30 14:36:18.102 21636-21696 CameraManagerGlobal     com.rtsp.camera                      W  ignore the torch status update of camera: 3
+2026-01-30 14:36:18.159 21636-21636 RTSPService             com.rtsp.camera                      D  Target: 1280x720, Optimal: 1280x720
+2026-01-30 14:36:18.180 21636-21636 libc                    com.rtsp.camera                      E  Access denied finding property "persist.vendor.camera.privapp.list"
+2026-01-30 14:36:18.181 21636-21636 CameraManager           com.rtsp.camera                      I  Using legacy camera HAL.
+2026-01-30 14:36:18.182 21636-21706 libc                    com.rtsp.camera                      E  Access denied finding property "config.disable_cameraservice"
+2026-01-30 14:36:18.198 21636-21656 libc                    com.rtsp.camera                      E  Access denied finding property "vendor.camera.aux.packagelist"
+2026-01-30 14:36:18.198 21636-21656 libc                    com.rtsp.camera                      E  Access denied finding property "vendor.camera.aux.packagelist"
+2026-01-30 14:36:18.305 21636-21636 libc                    com.rtsp.camera                      E  Access denied finding property "vendor.camera.aux.packagelist"
+2026-01-30 14:36:18.365 21636-21746 OMXClient               com.rtsp.camera                      I  IOmx service obtained
+2026-01-30 14:36:18.403 21636-21746 OMXUtils                com.rtsp.camera                      W  do not know color format 0x7fa30c04 = 2141391876
+2026-01-30 14:36:18.403 21636-21746 OMXUtils                com.rtsp.camera                      W  do not know color format 0x7f000789 = 2130708361
+2026-01-30 14:36:18.428 21636-21746 ACodec                  com.rtsp.camera                      I  setupAVCEncoderParameters with [profile: Baseline] [level: Level31]
+2026-01-30 14:36:18.432 21636-21746 ACodec                  com.rtsp.camera                      I  [OMX.qcom.video.encoder.avc] cannot encode HDR static metadata. Ignoring.
+2026-01-30 14:36:18.433 21636-21746 ACodec                  com.rtsp.camera                      I  setupVideoEncoder succeeded
+2026-01-30 14:36:18.435 21636-21746 OMXUtils                com.rtsp.camera                      W  do not know color format 0x7f000789 = 2130708361
+2026-01-30 14:36:18.451 21636-21636 VideoRenderPipeline     com.rtsp.camera                      D  Initializing video render pipeline: 1280x720
+2026-01-30 14:36:18.465 21636-21753 GLCameraRenderer        com.rtsp.camera                      D  EGL initialized successfully
+2026-01-30 14:36:18.500 21636-21753 GLCameraRenderer        com.rtsp.camera                      D  OpenGL shaders compiled and linked
+2026-01-30 14:36:18.505 21636-21753 GLCameraRenderer        com.rtsp.camera                      D  Textures initialized. Camera: 1, OSD: 2
+2026-01-30 14:36:18.505 21636-21753 GLCameraRenderer        com.rtsp.camera                      D  GLCameraRenderer initialized: 1280x720
+2026-01-30 14:36:18.506 21636-21753 VideoRenderPipeline     com.rtsp.camera                      D  GL renderer initialized on render thread
+2026-01-30 14:36:18.508 21636-21636 RTSPService             com.rtsp.camera                      D  GPU OSD rendering enabled, rotation=0
+2026-01-30 14:36:18.545 21636-21636 H264Encoder             com.rtsp.camera                      D  Encoder started: 1280x720 @ 1000kbps
+2026-01-30 14:36:18.553 21636-21636 CameraDeviceState       com.rtsp.camera                      I  Legacy camera service transitioning to state CONFIGURING
+2026-01-30 14:36:18.553 21636-21744 RequestThread-0         com.rtsp.camera                      I  Configure outputs: 2 surfaces configured.
+2026-01-30 14:36:18.553 21636-21744 Camera                  com.rtsp.camera                      D  app passed NULL surface
+2026-01-30 14:36:18.586 21636-21636 CameraDeviceState       com.rtsp.camera                      I  Legacy camera service transitioning to state IDLE
+2026-01-30 14:36:18.606 21636-21705 RequestQueue            com.rtsp.camera                      I  Repeating capture request set.
+2026-01-30 14:36:18.614 21636-21636 MultiStreamRTSPServer   com.rtsp.camera                      I  Registered stream: live (1280x720)
+2026-01-30 14:36:18.630 21636-21744 LegacyRequestMapper     com.rtsp.camera                      W  convertRequestMetadata - control.awbRegions setting is not supported, ignoring value
+2026-01-30 14:36:18.630 21636-21744 LegacyRequestMapper     com.rtsp.camera                      W  Only received metering rectangles with weight 0.
+2026-01-30 14:36:18.631 21636-21744 LegacyRequestMapper     com.rtsp.camera                      W  Only received metering rectangles with weight 0.
+2026-01-30 14:36:18.654 21636-21760 CCodec                  com.rtsp.camera                      D  allocate(c2.android.aac.encoder)
+2026-01-30 14:36:18.658 21636-21760 Codec2Client            com.rtsp.camera                      I  Available Codec2 services: "software"
+2026-01-30 14:36:18.668 21636-21760 CCodec                  com.rtsp.camera                      I  Created component [c2.android.aac.encoder]
+2026-01-30 14:36:18.669 21636-21760 CCodecConfig            com.rtsp.camera                      D  read media type: audio/mp4a-latm
+2026-01-30 14:36:18.671 21636-21760 ReflectedParamUpdater   com.rtsp.camera                      D  extent() != 1 for single value type: algo.buffers.max-count.values
+2026-01-30 14:36:18.672 21636-21760 ReflectedParamUpdater   com.rtsp.camera                      D  extent() != 1 for single value type: output.subscribed-indices.values
+2026-01-30 14:36:18.672 21636-21760 ReflectedParamUpdater   com.rtsp.camera                      D  extent() != 1 for single value type: input.buffers.allocator-ids.values
+2026-01-30 14:36:18.672 21636-21760 ReflectedParamUpdater   com.rtsp.camera                      D  extent() != 1 for single value type: output.buffers.allocator-ids.values
+2026-01-30 14:36:18.672 21636-21760 ReflectedParamUpdater   com.rtsp.camera                      D  extent() != 1 for single value type: algo.buffers.allocator-ids.values
+2026-01-30 14:36:18.672 21636-21760 ReflectedParamUpdater   com.rtsp.camera                      D  extent() != 1 for single value type: output.buffers.pool-ids.values
+2026-01-30 14:36:18.673 21636-21760 ReflectedParamUpdater   com.rtsp.camera                      D  extent() != 1 for single value type: algo.buffers.pool-ids.values
+2026-01-30 14:36:18.675 21636-21760 CCodecConfig            com.rtsp.camera                      I  query failed after returning 9 values (BAD_INDEX)
+2026-01-30 14:36:18.675 21636-21760 CCodecConfig            com.rtsp.camera                      D  c2 config diff is Dict {
+                                                                                                      c2::u32 coded.bitrate.value = 64000
+                                                                                                      c2::u32 coded.pl.level = 0
+                                                                                                      c2::u32 coded.pl.profile = 8192
+                                                                                                      c2::u32 coding.aac-sbr-mode.value = 3
+                                                                                                      c2::u32 input.buffers.max-size.value = 2048
+                                                                                                      c2::u32 input.delay.value = 0
+                                                                                                      string input.media-type.value = "audio/raw"
+                                                                                                      string output.media-type.value = "audio/mp4a-latm"
+                                                                                                      c2::u32 raw.channel-count.value = 1
+                                                                                                      c2::u32 raw.sample-rate.value = 44100
+                                                                                                    }
+2026-01-30 14:36:18.677 21636-21760 CCodec                  com.rtsp.camera                      D  [c2.android.aac.encoder] buffers are bound to CCodec for this session
+2026-01-30 14:36:18.677 21636-21760 CCodecConfig            com.rtsp.camera                      D  no c2 equivalents for aac-profile
+2026-01-30 14:36:18.677 21636-21760 CCodecConfig            com.rtsp.camera                      D  no c2 equivalents for flags
+2026-01-30 14:36:18.677 21636-21760 CCodecConfig            com.rtsp.camera                      D  no c2 equivalents for encoder
+2026-01-30 14:36:18.678 21636-21760 Codec2Client            com.rtsp.camera                      W  query -- param skipped: index = 1107298332.
+2026-01-30 14:36:18.679 21636-21760 CCodec                  com.rtsp.camera                      D  setup formats input: AMessage(what = 0x00000000) = {
+                                                                                                      int32_t aac-sbr-mode = 3
+                                                                                                      int32_t channel-count = 1
+                                                                                                      int32_t max-input-size = 7168
+                                                                                                      string mime = "audio/raw"
+                                                                                                      int32_t sample-rate = 44100
+                                                                                                    } and output: AMessage(what = 0x00000000) = {
+                                                                                                      int32_t aac-sbr-mode = 3
+                                                                                                      int32_t bitrate = 64000
+                                                                                                      int32_t channel-count = 1
+                                                                                                      int32_t level = 0
+                                                                                                      int32_t max-bitrate = 64000
+                                                                                                      string mime = "audio/mp4a-latm"
+                                                                                                      int32_t profile = 2
+                                                                                                      int32_t sample-rate = 44100
+                                                                                                    }
+2026-01-30 14:36:18.679 21636-21636 AACEncoder              com.rtsp.camera                      D  Initialized: 44100Hz, 1ch, 64000bps
+2026-01-30 14:36:18.694 21636-21760 Codec2Client            com.rtsp.camera                      W  query -- param skipped: index = 1342179345.
+2026-01-30 14:36:18.694 21636-21760 Codec2Client            com.rtsp.camera                      W  query -- param skipped: index = 2415921170.
+2026-01-30 14:36:18.696 21636-21760 FMQ                     com.rtsp.camera                      E  grantorIdx must be less than 3
+2026-01-30 14:36:18.696 21636-21760 FMQ                     com.rtsp.camera                      E  grantorIdx must be less than 3
+2026-01-30 14:36:18.696 21636-21760 CCodecBufferChannel     com.rtsp.camera                      D  [c2.android.aac.encoder#125] Created input block pool with allocatorID 16 => poolID 17 - OK (0)
+2026-01-30 14:36:18.698 21636-21760 CCodecBufferChannel     com.rtsp.camera                      I  [c2.android.aac.encoder#125] Created output block pool with allocatorID 16 => poolID 34 - OK
+2026-01-30 14:36:18.698 21636-21760 CCodecBufferChannel     com.rtsp.camera                      D  [c2.android.aac.encoder#125] Configured output block pool ids 34 => OK
+2026-01-30 14:36:18.699 21636-21760 ion                     com.rtsp.camera                      E  ioctl c0044901 failed with code -1: Invalid argument
+2026-01-30 14:36:18.704 21636-21696 Gralloc4                com.rtsp.camera                      W  allocator 3.x is not supported
+2026-01-30 14:36:18.704 21636-21696 Gralloc3                com.rtsp.camera                      W  allocator 3.x is not supported
+2026-01-30 14:36:18.706 21636-21696 Gralloc2                com.rtsp.camera                      I  Adding additional valid usage bits: 0x0
+2026-01-30 14:36:18.708 21636-21636 AACEncoder              com.rtsp.camera                      D  Audio encoder started
+2026-01-30 14:36:18.708 21636-21636 RTSPService             com.rtsp.camera                      I  Audio encoder started
+2026-01-30 14:36:18.710 21636-21636 MultiStreamRTSPServer   com.rtsp.camera                      I  Multi-stream RTSP Server started on port 8554
+2026-01-30 14:36:18.710 21636-21636 MultiStreamRTSPServer   com.rtsp.camera                      I  Available streams: [live]
+2026-01-30 14:36:18.711 21636-21777 AACEncoder              com.rtsp.camera                      D  Output format changed. ASC: 2 bytes
+2026-01-30 14:36:18.739 21636-21636 RTSPService             com.rtsp.camera                      I  Streaming started: rtsp://192.168.100.230:8554/live
+2026-01-30 14:36:18.751 21636-21753 GLCameraRenderer        com.rtsp.camera                      D  Preview surface attached: 1080x2160
+2026-01-30 14:36:18.753 21636-21753 GLCameraRenderer        com.rtsp.camera                      D  Preview surface attached: 1080x2160
+2026-01-30 14:36:18.760 21636-21753 GLCameraRenderer        com.rtsp.camera                      D  Preview surface attached: 1080x607
+2026-01-30 14:36:18.871 21636-21757 CameraDeviceState       com.rtsp.camera                      I  Legacy camera service transitioning to state CAPTURING
+2026-01-30 14:36:18.874 21636-21760 FMQ                     com.rtsp.camera                      E  grantorIdx must be less than 3
+2026-01-30 14:36:18.889 21636-21747 FMQ                     com.rtsp.camera                      E  grantorIdx must be less than 3
+2026-01-30 14:36:18.893 21636-21760 CCodecBuffers           com.rtsp.camera                      D  [c2.android.aac.encoder#125:Output[N]] popFromStashAndRegister: output format changed to AMessage(what = 0x00000000) = {
+                                                                                                      int32_t aac-sbr-mode = 3
+                                                                                                      int32_t bitrate = 64000
+                                                                                                      int32_t channel-count = 1
+                                                                                                      int32_t level = 0
+                                                                                                      int32_t max-bitrate = 64000
+                                                                                                      string mime = "audio/mp4a-latm"
+                                                                                                      int32_t profile = 2
+                                                                                                      int32_t sample-rate = 44100
+                                                                                                      Buffer csd-0 = {
+                                                                                                        00000000:  12 08                                             ..
+                                                                                                      }
+                                                                                                    }
+2026-01-30 14:36:18.906 21636-21746 ACodec                  com.rtsp.camera                      D  dataspace changed to 0x10c10000 (R:2(Limited), P:3(BT601_6_625), M:3(BT601_6), T:3(SMPTE170M)) (R:2(Limited), S:2(BT601_625), T:3(SMPTE_170M))
+2026-01-30 14:36:18.951 21636-21756 H264Encoder             com.rtsp.camera                      D  Output format changed. SPS: 21 bytes, PPS: 8 bytes
+2026-01-30 14:36:18.953 21636-21756 RTSPService             com.rtsp.camera                      D  onEncodedFrame[live]: frame=1, size=29, flags=2
+2026-01-30 14:36:18.953 21636-21756 RTSPService             com.rtsp.camera                      D  Got codec config frame for live
+2026-01-30 14:36:18.953 21636-21756 RTSPService             com.rtsp.camera                      D  Setting SPS/PPS: sps=21, pps=8
+2026-01-30 14:36:18.967 21636-21756 RTSPService             com.rtsp.camera                      D  onEncodedFrame[live]: frame=2, size=5706, flags=1
+2026-01-30 14:36:18.967 21636-21756 RTSPService             com.rtsp.camera                      D  Sending frame to RTSP: path=live, clients=0
+2026-01-30 14:36:19.006 21636-21756 RTSPService             com.rtsp.camera                      D  onEncodedFrame[live]: frame=3, size=6244, flags=0
+2026-01-30 14:36:19.006 21636-21756 RTSPService             com.rtsp.camera                      D  Sending frame to RTSP: path=live, clients=0
+2026-01-30 14:36:19.074 21636-21756 RTSPService             com.rtsp.camera                      D  onEncodedFrame[live]: frame=4, size=9134, flags=0
+2026-01-30 14:36:19.075 21636-21756 RTSPService             com.rtsp.camera                      D  Sending frame to RTSP: path=live, clients=0
+2026-01-30 14:36:19.144 21636-21756 RTSPService             com.rtsp.camera                      D  onEncodedFrame[live]: frame=5, size=14595, flags=0
+2026-01-30 14:36:19.144 21636-21756 RTSPService             com.rtsp.camera                      D  Sending frame to RTSP: path=live, clients=0
+2026-01-30 14:36:20.032 21636-21780 MultiStreamRTSPServer   com.rtsp.camera                      D  New client connected: 192.168.100.62:39756
+2026-01-30 14:36:20.036 21636-21811 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:39756: OPTIONS rtsp://192.168.100.230:8554/live
+2026-01-30 14:36:20.039 21636-21811 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:20.039 21636-21811 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live)
+2026-01-30 14:36:20.039 21636-21811 MultiStreamRTSPServer   com.rtsp.camera                      I  Client 192.168.100.62:39756 registered to stream: live
+2026-01-30 14:36:20.066 21636-21753 GLCameraRenderer        com.rtsp.camera                      D  Preview surface attached: 1080x607
+2026-01-30 14:36:20.084 21636-21811 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:20.086 21636-21811 MultiStreamRTSPServer   com.rtsp.camera                      D  Client disconnected: 192.168.100.62:39756
+2026-01-30 14:36:20.088 21636-21780 MultiStreamRTSPServer   com.rtsp.camera                      D  New client connected: 192.168.100.62:39764
+2026-01-30 14:36:20.090 21636-21812 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:39764: OPTIONS rtsp://192.168.100.230:8554/live
+2026-01-30 14:36:20.092 21636-21812 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:20.092 21636-21812 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live)
+2026-01-30 14:36:20.092 21636-21812 MultiStreamRTSPServer   com.rtsp.camera                      I  Client 192.168.100.62:39764 registered to stream: live
+2026-01-30 14:36:20.103 21636-21753 GLCameraRenderer        com.rtsp.camera                      D  Preview surface attached: 1080x607
+2026-01-30 14:36:20.112 21636-21812 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:20.112 21636-21753 GLCameraRenderer        com.rtsp.camera                      D  Preview surface attached: 1080x607
+2026-01-30 14:36:20.115 21636-21812 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:39764: DESCRIBE rtsp://192.168.100.230:8554/live
+2026-01-30 14:36:20.116 21636-21812 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:20.116 21636-21812 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live)
+2026-01-30 14:36:20.128 21636-21812 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:20.132 21636-21812 MultiStreamRTSPServer   com.rtsp.camera                      D  Client disconnected: 192.168.100.62:39764
+2026-01-30 14:36:20.153 21636-21753 GLCameraRenderer        com.rtsp.camera                      D  Preview surface attached: 1080x607
+2026-01-30 14:36:22.699 21636-21780 MultiStreamRTSPServer   com.rtsp.camera                      D  New client connected: 192.168.100.62:59446
+2026-01-30 14:36:22.702 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:59446: OPTIONS rtsp://192.168.100.230:8554/live
+2026-01-30 14:36:22.703 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:22.703 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live)
+2026-01-30 14:36:22.703 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      I  Client 192.168.100.62:59446 registered to stream: live
+2026-01-30 14:36:22.719 21636-21753 GLCameraRenderer        com.rtsp.camera                      D  Preview surface attached: 1080x607
+2026-01-30 14:36:22.720 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:22.724 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:59446: DESCRIBE rtsp://192.168.100.230:8554/live
+2026-01-30 14:36:22.724 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:22.724 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live)
+2026-01-30 14:36:22.756 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:22.759 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:59446: SETUP rtsp://192.168.100.230:8554/live/track0
+2026-01-30 14:36:22.760 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live/track0, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:22.760 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live/track0)
+2026-01-30 14:36:22.760 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  SETUP Transport header: RTP/AVP/TCP;unicast;interleaved=0-1
+2026-01-30 14:36:22.760 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      I  Client using TCP interleaved mode: RTP channel=0, RTCP channel=1
+2026-01-30 14:36:22.760 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  SETUP Response Transport: RTP/AVP/TCP;unicast;interleaved=0-1
+2026-01-30 14:36:22.762 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:22.765 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:59446: SETUP rtsp://192.168.100.230:8554/live/track1
+2026-01-30 14:36:22.766 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live/track1, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:22.766 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live/track1)
+2026-01-30 14:36:22.766 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  SETUP Transport header: RTP/AVP/TCP;unicast;interleaved=2-3
+2026-01-30 14:36:22.767 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      I  Client using TCP interleaved mode: RTP channel=2, RTCP channel=3
+2026-01-30 14:36:22.767 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  SETUP Response Transport: RTP/AVP/TCP;unicast;interleaved=2-3
+2026-01-30 14:36:22.769 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:22.773 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:59446: PLAY rtsp://192.168.100.230:8554/live
+2026-01-30 14:36:22.774 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:22.774 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live)
+2026-01-30 14:36:22.774 21636-21814 RTSPService             com.rtsp.camera                      D  Client started playing, requesting key frame
+2026-01-30 14:36:22.779 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:22.798 21636-21756 MultiStreamRTSPServer   com.rtsp.camera                      D  sendVideoFrame[live]: dataSize=19747, nalUnits=1, clients=1
+2026-01-30 14:36:22.842 21636-21756 RTSPService             com.rtsp.camera                      D  onEncodedFrame[live]: frame=100, size=5212, flags=0
+2026-01-30 14:36:22.843 21636-21756 MultiStreamRTSPServer   com.rtsp.camera                      D  sendVideoFrame[live]: dataSize=5212, nalUnits=1, clients=1
+2026-01-30 14:36:22.873 21636-21756 MultiStreamRTSPServer   com.rtsp.camera                      D  sendVideoFrame[live]: dataSize=5424, nalUnits=1, clients=1
+2026-01-30 14:36:23.698 21636-21764 BufferPoolAccessor2.0   com.rtsp.camera                      D  bufferpool2 0x774c61a228 : 5(35840 size) total buffers - 4(28672 size) used buffers - 0/5 (recycle/alloc) - 4/120 (fetch/transfer)
+2026-01-30 14:36:23.698 21636-21764 BufferPoolAccessor2.0   com.rtsp.camera                      D  evictor expired: 1, evicted: 1
+2026-01-30 14:36:27.380 21636-21756 RTSPService             com.rtsp.camera                      D  onEncodedFrame[live]: frame=200, size=3605, flags=0
+2026-01-30 14:36:27.717 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:59446: RTSP/1.0 501
+2026-01-30 14:36:27.718 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=501, cleanUri=501, path=501, streams=[live]
+2026-01-30 14:36:27.718 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: null (from 501)
+2026-01-30 14:36:27.719 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 501 Not Implemented
+2026-01-30 14:36:27.723 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:59446: RTSP/1.0 501
+2026-01-30 14:36:27.723 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=501, cleanUri=501, path=501, streams=[live]
+2026-01-30 14:36:27.723 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: null (from 501)
+2026-01-30 14:36:27.725 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 501 Not Implemented
+2026-01-30 14:36:28.702 21636-21760 BufferPoolAccessor2.0   com.rtsp.camera                      D  bufferpool2 0x774c61a228 : 4(28672 size) total buffers - 4(28672 size) used buffers - 0/5 (recycle/alloc) - 4/243 (fetch/transfer)
+2026-01-30 14:36:31.248 21636-21756 RTSPService             com.rtsp.camera                      D  onEncodedFrame[live]: frame=300, size=9795, flags=0
+2026-01-30 14:36:32.747 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:59446: TEARDOWN rtsp://192.168.100.230:8554/live
+2026-01-30 14:36:32.748 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:32.748 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live)
+2026-01-30 14:36:32.749 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:32.751 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      E  Error handling client 192.168.100.62:59446 (Fix with AI)
+                                                                                                    java.net.SocketException: Connection reset
+                                                                                                    	at java.net.SocketInputStream.read(SocketInputStream.java:215)
+                                                                                                    	at java.net.SocketInputStream.read(SocketInputStream.java:144)
+                                                                                                    	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:291)
+                                                                                                    	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:355)
+                                                                                                    	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:181)
+                                                                                                    	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+                                                                                                    	at java.io.BufferedReader.fill(BufferedReader.java:172)
+                                                                                                    	at java.io.BufferedReader.readLine(BufferedReader.java:335)
+                                                                                                    	at java.io.BufferedReader.readLine(BufferedReader.java:400)
+                                                                                                    	at com.rtsp.camera.rtsp.MultiStreamRTSPServer.readRTSPRequest(MultiStreamRTSPServer.kt:235)
+                                                                                                    	at com.rtsp.camera.rtsp.MultiStreamRTSPServer.handleClient$lambda$5(MultiStreamRTSPServer.kt:174)
+                                                                                                    	at com.rtsp.camera.rtsp.MultiStreamRTSPServer.$r8$lambda$tqaxXpqrtZo8mwUbt6W5scSqCoU(Unknown Source:0)
+                                                                                                    	at com.rtsp.camera.rtsp.MultiStreamRTSPServer$$ExternalSyntheticLambda1.run(Unknown Source:6)
+                                                                                                    	at java.lang.Thread.run(Thread.java:923)
+2026-01-30 14:36:32.751 21636-21814 MultiStreamRTSPServer   com.rtsp.camera                      D  Client disconnected: 192.168.100.62:59446
+2026-01-30 14:36:32.768 21636-21753 GLCameraRenderer        com.rtsp.camera                      D  Preview surface attached: 1080x607
+2026-01-30 14:36:33.822 21636-21760 BufferPoolAccessor2.0   com.rtsp.camera                      D  bufferpool2 0x774c61a228 : 4(28672 size) total buffers - 4(28672 size) used buffers - 0/5 (recycle/alloc) - 4/369 (fetch/transfer)
+2026-01-30 14:36:35.140 21636-21756 RTSPService             com.rtsp.camera                      D  onEncodedFrame[live]: frame=400, size=20675, flags=0
+2026-01-30 14:36:35.752 21636-21780 MultiStreamRTSPServer   com.rtsp.camera                      D  New client connected: 192.168.100.62:50870
+2026-01-30 14:36:35.755 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:50870: OPTIONS rtsp://192.168.100.230:8554/live
+2026-01-30 14:36:35.756 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:35.756 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live)
+2026-01-30 14:36:35.756 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      I  Client 192.168.100.62:50870 registered to stream: live
+2026-01-30 14:36:35.777 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:35.780 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:50870: DESCRIBE rtsp://192.168.100.230:8554/live
+2026-01-30 14:36:35.781 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:35.781 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live)
+2026-01-30 14:36:35.787 21636-21753 GLCameraRenderer        com.rtsp.camera                      D  Preview surface attached: 1080x607
+2026-01-30 14:36:35.799 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:35.802 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:50870: SETUP rtsp://192.168.100.230:8554/live/track0
+2026-01-30 14:36:35.802 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live/track0, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:35.803 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live/track0)
+2026-01-30 14:36:35.803 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  SETUP Transport header: RTP/AVP/TCP;unicast;interleaved=0-1
+2026-01-30 14:36:35.803 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      I  Client using TCP interleaved mode: RTP channel=0, RTCP channel=1
+2026-01-30 14:36:35.803 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  SETUP Response Transport: RTP/AVP/TCP;unicast;interleaved=0-1
+2026-01-30 14:36:35.805 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:35.809 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:50870: SETUP rtsp://192.168.100.230:8554/live/track1
+2026-01-30 14:36:35.810 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live/track1, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:35.810 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live/track1)
+2026-01-30 14:36:35.810 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  SETUP Transport header: RTP/AVP/TCP;unicast;interleaved=2-3
+2026-01-30 14:36:35.810 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      I  Client using TCP interleaved mode: RTP channel=2, RTCP channel=3
+2026-01-30 14:36:35.810 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  SETUP Response Transport: RTP/AVP/TCP;unicast;interleaved=2-3
+2026-01-30 14:36:35.812 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:35.814 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:50870: PLAY rtsp://192.168.100.230:8554/live
+2026-01-30 14:36:35.814 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:35.815 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live)
+2026-01-30 14:36:35.815 21636-21816 RTSPService             com.rtsp.camera                      D  Client started playing, requesting key frame
+2026-01-30 14:36:35.816 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:38.949 21636-21760 BufferPoolAccessor2.0   com.rtsp.camera                      D  bufferpool2 0x774c61a228 : 4(28672 size) total buffers - 4(28672 size) used buffers - 0/5 (recycle/alloc) - 4/495 (fetch/transfer)
+2026-01-30 14:36:39.346 21636-21756 RTSPService             com.rtsp.camera                      D  onEncodedFrame[live]: frame=500, size=5878, flags=0
+2026-01-30 14:36:40.996 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:50870: RTSP/1.0 501
+2026-01-30 14:36:40.997 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=501, cleanUri=501, path=501, streams=[live]
+2026-01-30 14:36:40.997 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: null (from 501)
+2026-01-30 14:36:40.998 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 501 Not Implemented
+2026-01-30 14:36:41.005 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:50870: RTSP/1.0 501
+2026-01-30 14:36:41.006 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=501, cleanUri=501, path=501, streams=[live]
+2026-01-30 14:36:41.006 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: null (from 501)
+2026-01-30 14:36:41.007 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 501 Not Implemented
+2026-01-30 14:36:41.012 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:50870: RTSP/1.0 501
+2026-01-30 14:36:41.012 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=501, cleanUri=501, path=501, streams=[live]
+2026-01-30 14:36:41.012 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: null (from 501)
+2026-01-30 14:36:41.013 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 501 Not Implemented
+2026-01-30 14:36:41.324 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:50870: RTSP/1.0 501
+2026-01-30 14:36:41.325 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=501, cleanUri=501, path=501, streams=[live]
+2026-01-30 14:36:41.325 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: null (from 501)
+2026-01-30 14:36:41.326 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 501 Not Implemented
+2026-01-30 14:36:41.331 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:50870: RTSP/1.0 501
+2026-01-30 14:36:41.333 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=501, cleanUri=501, path=501, streams=[live]
+2026-01-30 14:36:41.333 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: null (from 501)
+2026-01-30 14:36:41.334 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 501 Not Implemented
+2026-01-30 14:36:41.490 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:50870: RTSP/1.0 501
+2026-01-30 14:36:41.491 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=501, cleanUri=501, path=501, streams=[live]
+2026-01-30 14:36:41.491 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: null (from 501)
+2026-01-30 14:36:41.492 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 501 Not Implemented
+2026-01-30 14:36:41.494 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:50870: RTSP/1.0 501
+2026-01-30 14:36:41.495 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=501, cleanUri=501, path=501, streams=[live]
+2026-01-30 14:36:41.495 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: null (from 501)
+2026-01-30 14:36:41.497 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 501 Not Implemented
+2026-01-30 14:36:41.851 21636-21636 MainActivity            com.rtsp.camera                      D  Button clicked, rtspService=true, serviceBound=true, state=Streaming(rtspUrl=rtsp://192.168.100.230:8554/live, clientCount=1)
+2026-01-30 14:36:41.870 21636-21636 LightSensorManager      com.rtsp.camera                      D  Light sensor stopped
+2026-01-30 14:36:41.871 21636-21636 KeepAliveManager        com.rtsp.camera                      I  Stopping keep-alive manager
+2026-01-30 14:36:41.882 21636-21636 KeepAliveManager        com.rtsp.camera                      D  WifiLock released
+2026-01-30 14:36:41.883 21636-21636 KeepAliveManager        com.rtsp.camera                      D  WakeLock released
+2026-01-30 14:36:41.886 21636-21777 MultiStreamRTSPServer   com.rtsp.camera                      E  Failed to send RTP packet to 192.168.100.62:50870: Socket is closed
+2026-01-30 14:36:41.887 21636-21636 MultiStreamRTSPServer   com.rtsp.camera                      I  Multi-stream RTSP Server stopped
+2026-01-30 14:36:41.887 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      E  Error handling client 192.168.100.62:50870 (Fix with AI)
+                                                                                                    java.net.SocketException: Socket closed
+                                                                                                    	at java.net.SocketInputStream.socketRead0(Native Method)
+                                                                                                    	at java.net.SocketInputStream.socketRead(SocketInputStream.java:119)
+                                                                                                    	at java.net.SocketInputStream.read(SocketInputStream.java:176)
+                                                                                                    	at java.net.SocketInputStream.read(SocketInputStream.java:144)
+                                                                                                    	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:291)
+                                                                                                    	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:355)
+                                                                                                    	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:181)
+                                                                                                    	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+                                                                                                    	at java.io.BufferedReader.fill(BufferedReader.java:172)
+                                                                                                    	at java.io.BufferedReader.readLine(BufferedReader.java:335)
+                                                                                                    	at java.io.BufferedReader.readLine(BufferedReader.java:400)
+                                                                                                    	at com.rtsp.camera.rtsp.MultiStreamRTSPServer.readRTSPRequest(MultiStreamRTSPServer.kt:235)
+                                                                                                    	at com.rtsp.camera.rtsp.MultiStreamRTSPServer.handleClient$lambda$5(MultiStreamRTSPServer.kt:174)
+                                                                                                    	at com.rtsp.camera.rtsp.MultiStreamRTSPServer.$r8$lambda$tqaxXpqrtZo8mwUbt6W5scSqCoU(Unknown Source:0)
+                                                                                                    	at com.rtsp.camera.rtsp.MultiStreamRTSPServer$$ExternalSyntheticLambda1.run(Unknown Source:6)
+                                                                                                    	at java.lang.Thread.run(Thread.java:923)
+2026-01-30 14:36:41.887 21636-21636 RequestQueue            com.rtsp.camera                      I  Repeating capture request cancelled.
+2026-01-30 14:36:41.888 21636-21816 MultiStreamRTSPServer   com.rtsp.camera                      D  Client disconnected: 192.168.100.62:50870
+2026-01-30 14:36:41.900 21636-21696 BufferQueueProducer     com.rtsp.camera                      E  [SurfaceTexture-1-21636-1](id:548400000002,api:4,p:2504,c:21636) queueBuffer: BufferQueue has been abandoned
+2026-01-30 14:36:41.920 21636-21696 BufferQueueProducer     com.rtsp.camera                      E  [SurfaceTexture-1-21636-1](id:548400000002,api:4,p:2504,c:21636) cancelBuffer: BufferQueue has been abandoned
+2026-01-30 14:36:41.932 21636-21696 chatty                  com.rtsp.camera                      I  uid=10265(com.rtsp.camera) Binder:21636_4 identical 12 lines
+2026-01-30 14:36:41.933 21636-21696 BufferQueueProducer     com.rtsp.camera                      E  [SurfaceTexture-1-21636-1](id:548400000002,api:4,p:2504,c:21636) cancelBuffer: BufferQueue has been abandoned
+2026-01-30 14:36:42.107 21636-21696 libc                    com.rtsp.camera                      E  Access denied finding property "vendor.camera.aux.packagelist"
+2026-01-30 14:36:42.123 21636-21696 libc                    com.rtsp.camera                      E  Access denied finding property "vendor.camera.aux.packagelist"
+2026-01-30 14:36:42.143 21636-21753 GLCameraRenderer        com.rtsp.camera                      D  GLCameraRenderer released
+2026-01-30 14:36:42.144 21636-21636 VideoRenderPipeline     com.rtsp.camera                      D  Video render pipeline stopped
+2026-01-30 14:36:42.184 21636-21636 H264Encoder             com.rtsp.camera                      D  Encoder released
+2026-01-30 14:36:42.310 21636-21760 CCodecBufferChannel     com.rtsp.camera                      D  [c2.android.aac.encoder#125] MediaCodec discarded an unknown buffer
+2026-01-30 14:36:42.311 21636-21760 chatty                  com.rtsp.camera                      I  uid=10265(com.rtsp.camera) MediaCodec_loop identical 5 lines
+2026-01-30 14:36:42.311 21636-21760 CCodecBufferChannel     com.rtsp.camera                      D  [c2.android.aac.encoder#125] MediaCodec discarded an unknown buffer
+2026-01-30 14:36:42.331 21636-21636 AACEncoder              com.rtsp.camera                      D  Audio encoder released
+2026-01-30 14:36:42.332 21636-21760 hw-BpHwBinder           com.rtsp.camera                      I  onLastStrongRef automatically unlinking death recipients
+2026-01-30 14:36:42.365 21636-21636 RTSPService             com.rtsp.camera                      I  Streaming stopped
+2026-01-30 14:36:43.856 21636-21636 LightSensorManager      com.rtsp.camera                      D  Light sensor stopped
+2026-01-30 14:36:43.856 21636-21636 RTSPService             com.rtsp.camera                      I  RTSPService destroyed, all resources released
+2026-01-30 14:36:45.932 21636-21636 MainActivity            com.rtsp.camera                      D  Button clicked, rtspService=true, serviceBound=true, state=com.rtsp.camera.model.StreamingState$Idle@f4a6eb2
+2026-01-30 14:36:45.936 21636-21636 RTSPService             com.rtsp.camera                      D  startStreaming called, currentState=com.rtsp.camera.model.StreamingState$Idle@f4a6eb2
+2026-01-30 14:36:45.937 21636-21636 RTSPService             com.rtsp.camera                      D  State allows starting, proceeding...
+2026-01-30 14:36:45.972 21636-21636 KeepAliveManager        com.rtsp.camera                      I  Starting keep-alive manager
+2026-01-30 14:36:45.980 21636-21636 KeepAliveManager        com.rtsp.camera                      D  WakeLock acquired
+2026-01-30 14:36:45.986 21636-21636 KeepAliveManager        com.rtsp.camera                      D  WifiLock acquired
+2026-01-30 14:36:45.992 21636-21636 KeepAliveManager        com.rtsp.camera                      D  Keep-alive alarm scheduled
+2026-01-30 14:36:45.994 21636-21636 KeepAliveManager        com.rtsp.camera                      I  Keep-alive manager started with all strategies
+2026-01-30 14:36:46.000 21636-21636 libc                    com.rtsp.camera                      E  Access denied finding property "vendor.camera.aux.packagelist"
+2026-01-30 14:36:46.034 21636-21636 RTSPService             com.rtsp.camera                      D  Target: 1280x720, Optimal: 1280x720
+2026-01-30 14:36:46.046 21636-21636 libc                    com.rtsp.camera                      E  Access denied finding property "persist.vendor.camera.privapp.list"
+2026-01-30 14:36:46.047 21636-21636 CameraManager           com.rtsp.camera                      I  Using legacy camera HAL.
+2026-01-30 14:36:46.059 21636-21696 libc                    com.rtsp.camera                      E  Access denied finding property "vendor.camera.aux.packagelist"
+2026-01-30 14:36:46.062 21636-21696 libc                    com.rtsp.camera                      E  Access denied finding property "vendor.camera.aux.packagelist"
+2026-01-30 14:36:46.119 21636-21636 libc                    com.rtsp.camera                      E  Access denied finding property "vendor.camera.aux.packagelist"
+2026-01-30 14:36:46.159 21636-21872 OMXClient               com.rtsp.camera                      I  IOmx service obtained
+2026-01-30 14:36:46.211 21636-21872 OMXUtils                com.rtsp.camera                      W  do not know color format 0x7fa30c04 = 2141391876
+2026-01-30 14:36:46.212 21636-21872 OMXUtils                com.rtsp.camera                      W  do not know color format 0x7f000789 = 2130708361
+2026-01-30 14:36:46.232 21636-21872 ACodec                  com.rtsp.camera                      I  setupAVCEncoderParameters with [profile: Baseline] [level: Level31]
+2026-01-30 14:36:46.236 21636-21872 ACodec                  com.rtsp.camera                      I  [OMX.qcom.video.encoder.avc] cannot encode HDR static metadata. Ignoring.
+2026-01-30 14:36:46.237 21636-21872 ACodec                  com.rtsp.camera                      I  setupVideoEncoder succeeded
+2026-01-30 14:36:46.239 21636-21872 OMXUtils                com.rtsp.camera                      W  do not know color format 0x7f000789 = 2130708361
+2026-01-30 14:36:46.254 21636-21636 VideoRenderPipeline     com.rtsp.camera                      D  Initializing video render pipeline: 1280x720
+2026-01-30 14:36:46.263 21636-21878 GLCameraRenderer        com.rtsp.camera                      D  EGL initialized successfully
+2026-01-30 14:36:46.264 21636-21878 GLCameraRenderer        com.rtsp.camera                      D  OpenGL shaders compiled and linked
+2026-01-30 14:36:46.271 21636-21878 GLCameraRenderer        com.rtsp.camera                      D  Textures initialized. Camera: 1, OSD: 2
+2026-01-30 14:36:46.271 21636-21878 GLCameraRenderer        com.rtsp.camera                      D  GLCameraRenderer initialized: 1280x720
+2026-01-30 14:36:46.271 21636-21878 VideoRenderPipeline     com.rtsp.camera                      D  GL renderer initialized on render thread
+2026-01-30 14:36:46.272 21636-21636 RTSPService             com.rtsp.camera                      D  GPU OSD rendering enabled, rotation=0
+2026-01-30 14:36:46.306 21636-21636 H264Encoder             com.rtsp.camera                      D  Encoder started: 1280x720 @ 1000kbps
+2026-01-30 14:36:46.313 21636-21636 CameraDeviceState       com.rtsp.camera                      I  Legacy camera service transitioning to state CONFIGURING
+2026-01-30 14:36:46.314 21636-21870 RequestThread-0         com.rtsp.camera                      I  Configure outputs: 2 surfaces configured.
+2026-01-30 14:36:46.315 21636-21870 Camera                  com.rtsp.camera                      D  app passed NULL surface
+2026-01-30 14:36:46.349 21636-21636 CameraDeviceState       com.rtsp.camera                      I  Legacy camera service transitioning to state IDLE
+2026-01-30 14:36:46.352 21636-21831 RequestQueue            com.rtsp.camera                      I  Repeating capture request set.
+2026-01-30 14:36:46.354 21636-21636 MultiStreamRTSPServer   com.rtsp.camera                      I  Registered stream: live (1280x720)
+2026-01-30 14:36:46.357 21636-21870 LegacyRequestMapper     com.rtsp.camera                      W  convertRequestMetadata - control.awbRegions setting is not supported, ignoring value
+2026-01-30 14:36:46.357 21636-21870 LegacyRequestMapper     com.rtsp.camera                      W  Only received metering rectangles with weight 0.
+2026-01-30 14:36:46.357 21636-21870 LegacyRequestMapper     com.rtsp.camera                      W  Only received metering rectangles with weight 0.
+2026-01-30 14:36:46.358 21636-21636 MultiStreamRTSPServer   com.rtsp.camera                      I  Multi-stream RTSP Server started on port 8554
+2026-01-30 14:36:46.358 21636-21636 MultiStreamRTSPServer   com.rtsp.camera                      I  Available streams: [live]
+2026-01-30 14:36:46.369 21636-21878 GLCameraRenderer        com.rtsp.camera                      D  Preview surface attached: 1080x607
+2026-01-30 14:36:46.387 21636-21636 RTSPService             com.rtsp.camera                      I  Streaming started: rtsp://192.168.100.230:8554/live
+                                                                                                    
+                                                                                                    [          1769755006.379 21508:21508 I/(1)[21508:kworker/1:1][OPPO_CHG][battery_notify_vbat_check][BATTERY] FULL,tbatt_status 0,notify_code:128
+2026-01-30 14:36:46.599 21636-21881 CameraDeviceState       com.rtsp.camera                      I  Legacy camera service transitioning to state CAPTURING
+2026-01-30 14:36:46.621 21636-21872 ACodec                  com.rtsp.camera                      D  dataspace changed to 0x10c10000 (R:2(Limited), P:3(BT601_6_625), M:3(BT601_6), T:3(SMPTE170M)) (R:2(Limited), S:2(BT601_625), T:3(SMPTE_170M))
+2026-01-30 14:36:46.658 21636-21880 H264Encoder             com.rtsp.camera                      D  Output format changed. SPS: 21 bytes, PPS: 8 bytes
+2026-01-30 14:36:46.658 21636-21880 RTSPService             com.rtsp.camera                      D  onEncodedFrame[live]: frame=1, size=29, flags=2
+2026-01-30 14:36:46.658 21636-21880 RTSPService             com.rtsp.camera                      D  Got codec config frame for live
+2026-01-30 14:36:46.658 21636-21880 RTSPService             com.rtsp.camera                      D  Setting SPS/PPS: sps=21, pps=8
+2026-01-30 14:36:46.671 21636-21880 RTSPService             com.rtsp.camera                      D  onEncodedFrame[live]: frame=2, size=5287, flags=1
+2026-01-30 14:36:46.672 21636-21880 RTSPService             com.rtsp.camera                      D  Sending frame to RTSP: path=live, clients=0
+2026-01-30 14:36:46.716 21636-21880 RTSPService             com.rtsp.camera                      D  onEncodedFrame[live]: frame=3, size=2684, flags=0
+2026-01-30 14:36:46.716 21636-21880 RTSPService             com.rtsp.camera                      D  Sending frame to RTSP: path=live, clients=0
+2026-01-30 14:36:46.742 21636-21880 RTSPService             com.rtsp.camera                      D  onEncodedFrame[live]: frame=4, size=5847, flags=0
+2026-01-30 14:36:46.742 21636-21880 RTSPService             com.rtsp.camera                      D  Sending frame to RTSP: path=live, clients=0
+2026-01-30 14:36:46.780 21636-21880 RTSPService             com.rtsp.camera                      D  onEncodedFrame[live]: frame=5, size=6910, flags=0
+2026-01-30 14:36:46.780 21636-21880 RTSPService             com.rtsp.camera                      D  Sending frame to RTSP: path=live, clients=0
+2026-01-30 14:36:47.335 21636-21764 BufferPoolAccessor2.0   com.rtsp.camera                      D  bufferpool2 0x774c61a228 : 0(0 size) total buffers - 0(0 size) used buffers - 0/5 (recycle/alloc) - 4/576 (fetch/transfer)
+2026-01-30 14:36:47.336 21636-21764 BufferPoolAccessor2.0   com.rtsp.camera                      D  evictor expired: 1, evicted: 1
+2026-01-30 14:36:50.015 21636-21882 MultiStreamRTSPServer   com.rtsp.camera                      D  New client connected: 192.168.100.62:56634
+2026-01-30 14:36:50.028 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:56634: OPTIONS rtsp://192.168.100.230:8554/live
+2026-01-30 14:36:50.029 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:50.029 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live)
+2026-01-30 14:36:50.029 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      I  Client 192.168.100.62:56634 registered to stream: live
+2026-01-30 14:36:50.047 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:50.049 21636-21878 GLCameraRenderer        com.rtsp.camera                      D  Preview surface attached: 1080x607
+2026-01-30 14:36:50.049 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:56634: DESCRIBE rtsp://192.168.100.230:8554/live
+2026-01-30 14:36:50.050 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:50.050 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live)
+2026-01-30 14:36:50.057 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:50.061 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:56634: SETUP rtsp://192.168.100.230:8554/live/track0
+2026-01-30 14:36:50.062 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live/track0, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:50.062 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live/track0)
+2026-01-30 14:36:50.062 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  SETUP Transport header: RTP/AVP/TCP;unicast;interleaved=0-1
+2026-01-30 14:36:50.062 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      I  Client using TCP interleaved mode: RTP channel=0, RTCP channel=1
+2026-01-30 14:36:50.062 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  SETUP Response Transport: RTP/AVP/TCP;unicast;interleaved=0-1
+2026-01-30 14:36:50.064 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:50.067 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Request from 192.168.100.62:56634: PLAY rtsp://192.168.100.230:8554/live
+2026-01-30 14:36:50.067 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  extractStreamPath: uri=rtsp://192.168.100.230:8554/live, cleanUri=rtsp://192.168.100.230:8554/live, path=live, streams=[live]
+2026-01-30 14:36:50.068 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  Extracted stream path: live (from rtsp://192.168.100.230:8554/live)
+2026-01-30 14:36:50.068 21636-21922 RTSPService             com.rtsp.camera                      D  Client started playing, requesting key frame
+2026-01-30 14:36:50.072 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  RTSP Response: RTSP/1.0 200 OK
+2026-01-30 14:36:50.098 21636-21880 MultiStreamRTSPServer   com.rtsp.camera                      D  sendVideoFrame[live]: dataSize=16662, nalUnits=1, clients=1
+2026-01-30 14:36:50.186 21636-21880 MultiStreamRTSPServer   com.rtsp.camera                      D  sendVideoFrame[live]: dataSize=22101, nalUnits=1, clients=1
+2026-01-30 14:36:50.257 21636-21880 MultiStreamRTSPServer   com.rtsp.camera                      D  sendVideoFrame[live]: dataSize=12261, nalUnits=1, clients=1
+2026-01-30 14:36:50.283 21636-21880 RTSPService             com.rtsp.camera                      D  onEncodedFrame[live]: frame=100, size=1503, flags=0
+2026-01-30 14:36:54.087 21636-21880 RTSPService             com.rtsp.camera                      D  onEncodedFrame[live]: frame=200, size=3416, flags=0
+2026-01-30 14:36:56.541 21636-21636 MainActivity            com.rtsp.camera                      D  Button clicked, rtspService=true, serviceBound=true, state=Streaming(rtspUrl=rtsp://192.168.100.230:8554/live, clientCount=1)
+2026-01-30 14:36:56.547 21636-21636 LightSensorManager      com.rtsp.camera                      D  Light sensor stopped
+2026-01-30 14:36:56.549 21636-21636 KeepAliveManager        com.rtsp.camera                      I  Stopping keep-alive manager
+2026-01-30 14:36:56.558 21636-21636 KeepAliveManager        com.rtsp.camera                      D  WifiLock released
+2026-01-30 14:36:56.559 21636-21636 KeepAliveManager        com.rtsp.camera                      D  WakeLock released
+2026-01-30 14:36:56.561 21636-21636 MultiStreamRTSPServer   com.rtsp.camera                      I  Multi-stream RTSP Server stopped
+2026-01-30 14:36:56.562 21636-21636 RequestQueue            com.rtsp.camera                      I  Repeating capture request cancelled.
+2026-01-30 14:36:56.563 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      E  Error handling client 192.168.100.62:56634 (Fix with AI)
+                                                                                                    java.net.SocketException: Socket closed
+                                                                                                    	at java.net.SocketInputStream.socketRead0(Native Method)
+                                                                                                    	at java.net.SocketInputStream.socketRead(SocketInputStream.java:119)
+                                                                                                    	at java.net.SocketInputStream.read(SocketInputStream.java:176)
+                                                                                                    	at java.net.SocketInputStream.read(SocketInputStream.java:144)
+                                                                                                    	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:291)
+                                                                                                    	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:355)
+                                                                                                    	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:181)
+                                                                                                    	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+                                                                                                    	at java.io.BufferedReader.fill(BufferedReader.java:172)
+                                                                                                    	at java.io.BufferedReader.readLine(BufferedReader.java:335)
+                                                                                                    	at java.io.BufferedReader.readLine(BufferedReader.java:400)
+                                                                                                    	at com.rtsp.camera.rtsp.MultiStreamRTSPServer.readRTSPRequest(MultiStreamRTSPServer.kt:235)
+                                                                                                    	at com.rtsp.camera.rtsp.MultiStreamRTSPServer.handleClient$lambda$5(MultiStreamRTSPServer.kt:174)
+                                                                                                    	at com.rtsp.camera.rtsp.MultiStreamRTSPServer.$r8$lambda$tqaxXpqrtZo8mwUbt6W5scSqCoU(Unknown Source:0)
+                                                                                                    	at com.rtsp.camera.rtsp.MultiStreamRTSPServer$$ExternalSyntheticLambda1.run(Unknown Source:6)
+                                                                                                    	at java.lang.Thread.run(Thread.java:923)
+2026-01-30 14:36:56.563 21636-21922 MultiStreamRTSPServer   com.rtsp.camera                      D  Client disconnected: 192.168.100.62:56634
+2026-01-30 14:36:56.611 21636-21696 BufferQueueProducer     com.rtsp.camera                      E  [SurfaceTexture-1-21636-3](id:548400000005,api:4,p:2504,c:21636) cancelBuffer: BufferQueue has been abandoned
+2026-01-30 14:36:56.628 21636-21696 chatty                  com.rtsp.camera                      I  uid=10265(com.rtsp.camera) Binder:21636_4 identical 12 lines
+2026-01-30 14:36:56.630 21636-21696 BufferQueueProducer     com.rtsp.camera                      E  [SurfaceTexture-1-21636-3](id:548400000005,api:4,p:2504,c:21636) cancelBuffer: BufferQueue has been abandoned
+2026-01-30 14:36:56.809 21636-21696 libc                    com.rtsp.camera                      E  Access denied finding property "vendor.camera.aux.packagelist"
+2026-01-30 14:36:56.820 21636-21696 libc                    com.rtsp.camera                      E  Access denied finding property "vendor.camera.aux.packagelist"
+2026-01-30 14:36:56.840 21636-21878 GLCameraRenderer        com.rtsp.camera                      D  GLCameraRenderer released
+2026-01-30 14:36:56.841 21636-21636 VideoRenderPipeline     com.rtsp.camera                      D  Video render pipeline stopped
+2026-01-30 14:36:56.874 21636-21636 H264Encoder             com.rtsp.camera                      D  Encoder released
+2026-01-30 14:36:56.915 21636-21636 RTSPService             com.rtsp.camera                      I  Streaming stopped

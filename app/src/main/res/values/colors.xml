@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- OLED True Black Palette -->
+    <color name="oled_black">#000000</color>
+    <color name="oled_surface">#000000</color>
+    
+    <!-- Neon Accents -->
+    <color name="neon_green">#39FF14</color>
+    <color name="neon_red">#FF073A</color>
+    <color name="neon_blue">#00FFFF</color>
+    <color name="neon_yellow">#FFD300</color>
+    
+    <!-- Material Mapping -->
+    <color name="primary">@color/neon_green</color>
+    <color name="primary_container">#1A1A1A</color>
+    <color name="on_primary">#000000</color>
+    <color name="on_primary_container">@color/neon_green</color>
+    
+    <color name="secondary">@color/neon_blue</color>
+    <color name="secondary_container">#1A1A1A</color>
+    <color name="on_secondary">#000000</color>
+    <color name="on_secondary_container">@color/neon_blue</color>
+    
+    <color name="error">@color/neon_red</color>
+    <color name="on_error">#000000</color>
+    
+    <color name="surface">@color/oled_black</color>
+    <color name="on_surface">#FFFFFF</color>
+    <color name="surface_variant">#121212</color>
+    <color name="on_surface_variant">#B0B0B0</color>
+    <color name="outline">#333333</color>
+    
+    <!-- Status -->
+    <color name="status_streaming">@color/neon_red</color>
+    <color name="status_idle">@color/neon_green</color>
+    <color name="status_error">@color/neon_red</color>
+    
+    <!-- UI Elements -->
+    <color name="divider">#333333</color>
+    <color name="card_stroke">#333333</color>
+</resources>

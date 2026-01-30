@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 全屏相机风格 UI：预览填满屏幕，控制按钮浮动叠加 -->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/oled_black"
+    android:keepScreenOn="true">
+
+    <!-- 预览容器 (推流时显示 RTSP 输出画面) -->
+    <FrameLayout
+        android:id="@+id/previewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        
+        <SurfaceView
+            android:id="@+id/previewView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+    <!-- 录像参数信息 (未推流时显示) -->
+    <LinearLayout
+        android:id="@+id/configInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@color/oled_black">
+
+        <TextView
+            android:id="@+id/configInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1920x1080 @ 30fps\n4 Mbps\nH.264"
+            android:textColor="@color/neon_green"
+            android:textSize="18sp"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.5"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="点击下方按钮开始推流"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <!-- 顶部状态栏 (半透明) -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="#80000000"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!-- 状态指示灯 -->
+        <View
+            android:id="@+id/statusDot"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/status_dot"/>
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="@string/status_idle"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"/>
+
+        <!-- 客户端数量 -->
+        <TextView
+            android:id="@+id/clientCountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 客户端"
+            android:textColor="@color/neon_blue"
+            android:textSize="12sp"
+            android:fontFamily="monospace"/>
+
+        <!-- 设置按钮 -->
+        <ImageButton
+            android:id="@+id/btnSettings"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="12dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_settings"
+            android:contentDescription="Settings"
+            app:tint="@android:color/white"/>
+
+    </LinearLayout>
+
+    <!-- 底部控制区 -->
+    <LinearLayout
+        android:id="@+id/bottomControls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#80000000"
+        android:padding="16dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- 功能按钮行 (水平排列) -->
+        <LinearLayout
+            android:id="@+id/functionButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp">
+
+            <!-- 闪光灯 -->
+            <ImageButton
+                android:id="@+id/btnFlash"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/control_button_bg"
+                android:src="@drawable/ic_flash_off"
+                android:contentDescription="Flash"
+                app:tint="@android:color/white"/>
+
+            <!-- 夜视 -->
+            <ImageButton
+                android:id="@+id/btnNightVision"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/control_button_bg"
+                android:src="@drawable/ic_night_vision"
+                android:contentDescription="Night Vision"
+                app:tint="@android:color/white"/>
+
+            <!-- 旋转 -->
+            <ImageButton
+                android:id="@+id/btnRotate"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/control_button_bg"
+                android:src="@drawable/ic_rotate"
+                android:contentDescription="Rotate"
+                app:tint="@android:color/white"/>
+
+            <!-- OSD -->
+            <ImageButton
+                android:id="@+id/btnOsd"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/control_button_bg"
+                android:src="@drawable/ic_text"
+                android:contentDescription="OSD"
+                app:tint="@android:color/white"/>
+
+            <!-- 挂机模式 (防烧屏) -->
+            <ImageButton
+                android:id="@+id/btnScreenSaver"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/control_button_bg"
+                android:src="@drawable/ic_screen_saver"
+                android:contentDescription="Screen Saver"
+                app:tint="@android:color/white"/>
+
+        </LinearLayout>
+
+        <!-- RTSP URL 显示 (推流时显示) -->
+        <TextView
+            android:id="@+id/rtspUrlText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="rtsp://192.168.1.100:8554/main"
+            android:textColor="@color/neon_green"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:textIsSelectable="true"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- 开始/停止按钮 (大圆形) -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            
+            <!-- 外圈 -->
+            <View
+                android:id="@+id/recordButtonRing"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:background="@drawable/record_button_ring"/>
+            
+            <!-- 内圈按钮 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStartStop"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:cornerRadius="32dp"
+                app:backgroundTint="@color/neon_green"
+                app:icon="@drawable/ic_play"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="32dp"
+                app:iconTint="@color/oled_black"/>
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!-- OLED Saver Overlay (隐藏) - 防烧屏模式 -->
+    <FrameLayout
+        android:id="@+id/oledSaverOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <!-- 动态移动的时钟 (防烧屏) -->
+        <LinearLayout
+            android:id="@+id/saverClockContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center">
+            
+            <TextView
+                android:id="@+id/saverTimeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:34"
+                android:textColor="#1AFF1A"
+                android:textSize="48sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.1"/>
+            
+            <TextView
+                android:id="@+id/saverDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2026-01-30"
+                android:textColor="#0D800D"
+                android:textSize="16sp"
+                android:fontFamily="monospace"/>
+            
+            <TextView
+                android:id="@+id/saverStatusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="● 推流中"
+                android:textColor="#1AFF1A"
+                android:textSize="14sp"/>
+        </LinearLayout>
+        
+        <!-- 状态点 (也会移动) -->
+        <View
+            android:id="@+id/saverDot"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_gravity="top|start"
+            android:background="@drawable/status_dot"
+            android:layout_margin="20dp"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="32dp"
+            android:text="点击屏幕退出"
+            android:textColor="#333333"
+            android:textSize="12sp"/>
+
+    </FrameLayout>
+
+</FrameLayout>

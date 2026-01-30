@@ -1,0 +1,24 @@
+# Built files
+/local.properties
+/.idea/*
+!/.idea/codeStyles
+/.gradle
+/build
+/app/build
+/captures
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Android Studio
+*.iml
+.idea/
+*.log
+
+# Keystore
+*.jks
+*.keystore
+
+# Local configuration
+local.properties

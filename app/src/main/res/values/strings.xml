@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RTSP摄像头</string>
+    
+    <!-- 主界面 -->
+    <string name="start_streaming">开始推流</string>
+    <string name="stop_streaming">停止推流</string>
+    <string name="streaming_status">推流状态</string>
+    <string name="status_idle">待机中</string>
+    <string name="status_streaming">推流中</string>
+    <string name="rtsp_url">RTSP地址</string>
+    <string name="copy_url">复制地址</string>
+    <string name="url_copied">地址已复制到剪贴板</string>
+    
+    <!-- 多码流 -->
+    <string name="main_stream">主码流 (高清)</string>
+    <string name="sub_stream">子码流 (流畅)</string>
+    <string name="multi_stream_hint">主码流适合本地查看，子码流适合远程流畅播放</string>
+    
+    <!-- 闪光灯 -->
+    <string name="flashlight">闪光灯</string>
+    <string name="flash_off">关闭</string>
+    <string name="flash_on">常开</string>
+    <string name="flash_auto">自动</string>
+    
+    <!-- 设置 -->
+    <string name="settings">设置</string>
+    <string name="video_settings">视频设置</string>
+    <string name="quality_preset">画质预设</string>
+    <string name="resolution">分辨率</string>
+    <string name="bitrate">码率</string>
+    <string name="framerate">帧率</string>
+    <string name="custom">自定义</string>
+    
+    <!-- 画质预设 -->
+    <string name="quality_very_low">极低 (320×240, 128kbps)</string>
+    <string name="quality_low">低 (640×480, 512kbps)</string>
+    <string name="quality_medium">中 (1280×720, 1Mbps)</string>
+    <string name="quality_high">高 (1920×1080, 2Mbps)</string>
+    <string name="quality_custom">自定义</string>
+    
+    <!-- 画质预设选项数组 -->
+    <string-array name="quality_preset_entries">
+        <item>@string/quality_very_low</item>
+        <item>@string/quality_low</item>
+        <item>@string/quality_medium</item>
+        <item>@string/quality_high</item>
+        <item>@string/quality_custom</item>
+    </string-array>
+    
+    <string-array name="quality_preset_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    
+    <!-- 网络设置 -->
+    <string name="network_settings">网络设置</string>
+    <string name="rtsp_port">RTSP端口</string>
+    <string name="ipv4_only">仅使用IPv4</string>
+    <string name="ipv4_only_summary">禁用IPv6，提高兼容性</string>
+    <string name="lan_only">仅局域网</string>
+    <string name="lan_only_summary">拒绝外网访问请求</string>
+    
+    <!-- OSD水印 -->
+    <string name="osd_settings">OSD水印</string>
+    <string name="enable_osd">启用OSD水印</string>
+    <string name="osd_timestamp">时间戳</string>
+    <string name="osd_battery">电池电量</string>
+    <string name="osd_temperature">电池温度</string>
+    <string name="osd_custom_text">自定义文本</string>
+    
+    <!-- 夜视增强 -->
+    <string name="night_vision_settings">夜视增强</string>
+    <string name="enable_night_vision">启用夜视增强</string>
+    <string name="night_vision_auto">自动调整</string>
+    <string name="night_vision_brightness">亮度增强</string>
+    <string name="night_vision_contrast">对比度增强</string>
+    <string name="night_vision_denoise">降噪强度</string>
+    
+    <!-- 高级设置 -->
+    <string name="advanced_settings">高级设置</string>
+    <string name="auto_start">开机自启动</string>
+    <string name="auto_start_summary">设备启动后自动开始推流</string>
+    <string name="enable_audio">启用音频</string>
+    <string name="enable_audio_summary">推流中包含麦克风音频</string>
+    <string name="enable_keep_alive">增强保活</string>
+    <string name="keep_alive_summary">使用多种策略确保后台长时间运行</string>
+    
+    <!-- 通知 -->
+    <string name="notification_channel_name">RTSP推流服务</string>
+    <string name="notification_title">RTSP摄像头运行中</string>
+    <string name="notification_content">正在推流到 %1$s</string>
+    
+    <!-- 权限 -->
+    <string name="permission_required">需要权限</string>
+    <string name="camera_permission_rationale">需要摄像头权限才能进行视频推流</string>
+    <string name="audio_permission_rationale">需要麦克风权限才能录制音频</string>
+    
+    <!-- 错误信息 -->
+    <string name="error_camera_init">摄像头初始化失败</string>
+    <string name="error_encoder_init">编码器初始化失败</string>
+    <string name="error_server_start">服务器启动失败</string>
+    <string name="error_no_network">无可用网络</string>
+    
+    <!-- 电池状态 -->
+    <string name="battery_level">电量: %1$d%%</string>
+    <string name="battery_charging">充电中</string>
+    <string name="battery_temperature">温度: %1$.1f°C</string>
+    <string name="battery_low_warning">电量低</string>
+    
+    <!-- 温度传感器选项 -->
+    <string-array name="temp_sensor_entries">
+        <item>电池温度</item>
+        <item>CPU温度 (Zone 0)</item>
+        <item>CPU温度 (Zone 1)</item>
+        <item>CPU温度 (Zone 2)</item>
+        <item>CPU温度 (Zone 3)</item>
+    </string-array>
+    
+    <string-array name="temp_sensor_values">
+        <item>battery</item>
+        <item>thermal_0</item>
+        <item>thermal_1</item>
+        <item>thermal_2</item>
+        <item>thermal_3</item>
+    </string-array>
+</resources>

@@ -1,0 +1,127 @@
+﻿> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors
+> Task :app:dataBindingMergeDependencyArtifactsDebug FAILED
+.\gradlew.bat : 
+所在位置 行:1 字符: 1
++ .\gradlew.bat assembleDebug 2>&1 | Out-File -FilePath build_log.txt - ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:dataBindingMergeDependencyArtifactsDebug'.
+> Configuration `:app:debugRuntimeClasspath` contains AndroidX dependencies, but the `android.useAndroidX` property is 
+not enabled, which may cause runtime issues.
+  Set `android.useAndroidX=true` in the `gradle.properties` file and retry.
+  The following AndroidX dependencies are detected:
+  :app:debugRuntimeClasspath -> androidx.core:core-ktx:1.12.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.annotation:annotation:1.6.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.annotation:annotation:1.6.0 -> 
+androidx.annotation:annotation-jvm:1.6.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.core:core:1.12.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.annotation:annotation-experimen
+tal:1.3.1
+  :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.appcompat:appcompat-resources:1.6.1 -> a
+ndroidx.collection:collection:1.1.0
+  :app:debugRuntimeClasspath -> androidx.camera:camera-lifecycle:1.3.1 -> androidx.camera:camera-video:1.3.1 -> android
+x.concurrent:concurrent-futures:1.1.0
+  :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.appcompat:appcompat-resources:1.6.1 -> a
+ndroidx.vectordrawable:vectordrawable-animated:1.1.0 -> androidx.interpolator:interpolator:1.0.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.lifecycle:lifecycle-runtime:2.7
+.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.fragment:fragment:1.6.2 -> andr
+oidx.lifecycle:lifecycle-livedata-core:2.7.0 -> androidx.arch.core:core-common:2.2.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.fragment:fragment:1.6.2 -> andr
+oidx.lifecycle:lifecycle-livedata-core:2.7.0 -> androidx.arch.core:core-runtime:2.2.0
+  :app:debugRuntimeClasspath -> androidx.camera:camera-lifecycle:1.3.1 -> androidx.lifecycle:lifecycle-common:2.7.0
+  :app:debugRuntimeClasspath -> androidx.camera:camera-core:1.3.1 -> androidx.lifecycle:lifecycle-livedata:2.7.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.fragment:fragment:1.6.2 -> andr
+oidx.lifecycle:lifecycle-livedata-core:2.7.0
+  :app:debugRuntimeClasspath -> androidx.fragment:fragment-ktx:1.6.2 -> androidx.lifecycle:lifecycle-livedata-core-ktx:
+2.7.0
+  :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.emoji2:emoji2:1.2.0 -> androidx.lifecycl
+e:lifecycle-process:2.7.0
+  :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.emoji2:emoji2:1.2.0 -> androidx.startup:
+startup-runtime:1.1.1
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.activity:activity:1.8.2 -> andr
+oidx.tracing:tracing:1.0.0
+  :app:debugRuntimeClasspath -> androidx.lifecycle:lifecycle-runtime-ktx:2.7.0
+  :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.lifecycle:lifecycle-viewmodel:2.7.0
+  :app:debugRuntimeClasspath -> androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.fragment:fragment:1.6.2 -> andr
+oidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0
+  :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.savedstate:savedstate:1.2.1
+  :app:debugRuntimeClasspath -> androidx.fragment:fragment-ktx:1.6.2 -> androidx.savedstate:savedstate-ktx:1.2.1
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.fragment:fragment:1.6.2 -> andr
+oidx.profileinstaller:profileinstaller:1.3.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.core:core:1.12.0 -> androidx.ve
+rsionedparcelable:versionedparcelable:1.1.1
+  :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.activity:activity:1.8.2
+  :app:debugRuntimeClasspath -> androidx.activity:activity-ktx:1.8.2
+  :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.appcompat:appcompat-resources:1.6.1
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.vectordrawable:vectordrawable:1
+.1.0
+  :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.appcompat:appcompat-resources:1.6.1 -> a
+ndroidx.vectordrawable:vectordrawable-animated:1.1.0
+  :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.cursoradapter:cursoradapter:1.0.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.drawerlayout:drawerlayout:1.1.1
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.drawerlayout:drawerlayout:1.1.1
+ -> androidx.customview:customview:1.1.0
+  :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.emoji2:emoji2:1.2.0
+  :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.emoji2:emoji2-views-helper:1.2.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.fragment:fragment:1.6.2
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.fragment:fragment:1.6.2 -> andr
+oidx.loader:loader:1.0.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.fragment:fragment:1.6.2 -> andr
+oidx.viewpager:viewpager:1.0.0
+  :app:debugRuntimeClasspath -> androidx.fragment:fragment-ktx:1.6.2
+  :app:debugRuntimeClasspath -> androidx.fragment:fragment-ktx:1.6.2 -> androidx.collection:collection-ktx:1.1.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.resourceinspection:resourceinsp
+ection-annotation:1.0.1
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.cardview:cardview:1.0.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.coordinatorlayout:coordinatorla
+yout:1.1.0
+  :app:debugRuntimeClasspath -> androidx.constraintlayout:constraintlayout:2.1.4
+  :app:debugRuntimeClasspath -> androidx.constraintlayout:constraintlayout:2.1.4 -> androidx.constraintlayout:constrain
+tlayout-core:1.0.4
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.dynamicanimation:dynamicanimati
+on:1.0.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.dynamicanimation:dynamicanimati
+on:1.0.0 -> androidx.legacy:legacy-support-core-utils:1.0.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.dynamicanimation:dynamicanimati
+on:1.0.0 -> androidx.legacy:legacy-support-core-utils:1.0.0 -> androidx.documentfile:documentfile:1.0.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.dynamicanimation:dynamicanimati
+on:1.0.0 -> androidx.legacy:legacy-support-core-utils:1.0.0 -> androidx.localbroadcastmanager:localbroadcastmanager:1.0
+.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.dynamicanimation:dynamicanimati
+on:1.0.0 -> androidx.legacy:legacy-support-core-utils:1.0.0 -> androidx.print:print:1.0.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.recyclerview:recyclerview:1.1.0
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.transition:transition:1.4.1
+  :app:debugRuntimeClasspath -> com.google.android.material:material:1.11.0 -> androidx.viewpager2:viewpager2:1.0.0
+  :app:debugRuntimeClasspath -> androidx.camera:camera-core:1.3.1
+  :app:debugRuntimeClasspath -> androidx.camera:camera-core:1.3.1 -> androidx.exifinterface:exifinterface:1.3.2
+  :app:debugRuntimeClasspath -> androidx.camera:camera-camera2:1.3.1
+  :app:debugRuntimeClasspath -> androidx.camera:camera-lifecycle:1.3.1
+  :app:debugRuntimeClasspath -> androidx.camera:camera-view:1.3.1
+  :app:debugRuntimeClasspath -> androidx.camera:camera-lifecycle:1.3.1 -> androidx.camera:camera-video:1.3.1
+  :app:debugRuntimeClasspath -> androidx.preference:preference-ktx:1.2.1
+  :app:debugRuntimeClasspath -> androidx.preference:preference-ktx:1.2.1 -> androidx.preference:preference:1.2.1
+  :app:debugRuntimeClasspath -> androidx.preference:preference-ktx:1.2.1 -> androidx.preference:preference:1.2.1 -> and
+roidx.slidingpanelayout:slidingpanelayout:1.2.0
+  :app:debugRuntimeClasspath -> androidx.preference:preference-ktx:1.2.1 -> androidx.preference:preference:1.2.1 -> and
+roidx.slidingpanelayout:slidingpanelayout:1.2.0 -> androidx.window:window:1.0.0
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 734ms
+2 actionable tasks: 2 executed

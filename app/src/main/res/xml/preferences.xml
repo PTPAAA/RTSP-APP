@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 视频设置 -->
+    <PreferenceCategory
+        android:key="video_category"
+        android:title="@string/video_settings">
+
+        <ListPreference
+            android:key="quality_preset"
+            android:title="@string/quality_preset"
+            android:entries="@array/quality_preset_entries"
+            android:entryValues="@array/quality_preset_values"
+            android:defaultValue="2"
+            app:useSimpleSummaryProvider="true"/>
+        
+        <!-- 自定义画质设置，仅当选择"自定义"时显示 -->
+        <EditTextPreference
+            android:key="custom_width"
+            android:title="分辨率宽度"
+            android:defaultValue="1280"
+            android:inputType="number"/>
+        
+        <EditTextPreference
+            android:key="custom_height"
+            android:title="分辨率高度"
+            android:defaultValue="720"
+            android:inputType="number"/>
+        
+        <EditTextPreference
+            android:key="custom_bitrate"
+            android:title="码率 (kbps)"
+            android:defaultValue="1000"
+            android:inputType="number"/>
+        
+        <EditTextPreference
+            android:key="custom_framerate"
+            android:title="帧率 (fps)"
+            android:defaultValue="24"
+            android:inputType="number"/>
+
+        <SwitchPreferenceCompat
+            android:key="use_back_camera"
+            android:title="使用后置摄像头"
+            android:summary="关闭则使用前置摄像头"
+            android:defaultValue="true"/>
+
+    </PreferenceCategory>
+    
+    <!-- 音频设置 -->
+    <PreferenceCategory
+        android:key="audio_category"
+        android:title="音频设置">
+
+        <SwitchPreferenceCompat
+            android:key="enable_audio"
+            android:title="启用音频"
+            android:summary="录制麦克风音频并推流"
+            android:defaultValue="false"/>
+
+    </PreferenceCategory>
+
+    <!-- 网络设置 -->
+    <PreferenceCategory
+        android:key="network_category"
+        android:title="@string/network_settings">
+
+        <EditTextPreference
+            android:key="rtsp_port"
+            android:title="@string/rtsp_port"
+            android:defaultValue="8554"
+            android:inputType="number"/>
+
+        <SwitchPreferenceCompat
+            android:key="ipv4_only"
+            android:title="@string/ipv4_only"
+            android:summary="@string/ipv4_only_summary"
+            android:defaultValue="false"/>
+
+        <SwitchPreferenceCompat
+            android:key="lan_only"
+            android:title="@string/lan_only"
+            android:summary="@string/lan_only_summary"
+            android:defaultValue="false"/>
+        
+        <!-- RTSP 鉴权 -->
+        <SwitchPreferenceCompat
+            android:key="enable_auth"
+            android:title="启用 RTSP 鉴权"
+            android:summary="开启后需要用户名和密码才能访问"
+            android:defaultValue="false"/>
+
+        <EditTextPreference
+            android:key="auth_username"
+            android:title="用户名"
+            android:summary="RTSP 鉴权用户名"
+            android:defaultValue=""
+            android:dependency="enable_auth"/>
+
+        <EditTextPreference
+            android:key="auth_password"
+            android:title="密码"
+            android:summary="RTSP 鉴权密码"
+            android:defaultValue=""
+            android:inputType="textPassword"
+            android:dependency="enable_auth"/>
+
+    </PreferenceCategory>
+
+    <!-- 闪光灯设置 -->
+    <PreferenceCategory
+        android:key="flash_category"
+        android:title="@string/flashlight">
+
+        <EditTextPreference
+            android:key="auto_flash_threshold"
+            android:title="自动闪光灯阈值"
+            android:summary="低于此光照强度(lux)时开启闪光灯"
+            android:defaultValue="10"
+            android:inputType="numberDecimal"/>
+
+    </PreferenceCategory>
+    
+    <!-- OSD水印设置 -->
+    <PreferenceCategory
+        android:key="osd_category"
+        android:title="OSD水印">
+
+        <SwitchPreferenceCompat
+            android:key="enable_osd"
+            android:title="启用OSD水印"
+            android:summary="在视频上叠加时间戳和电池信息"
+            android:defaultValue="true"/>
+
+        <SwitchPreferenceCompat
+            android:key="osd_show_timestamp"
+            android:title="显示时间戳"
+            android:summary="叠加当前日期和时间"
+            android:defaultValue="true"
+            android:dependency="enable_osd"/>
+
+        <SwitchPreferenceCompat
+            android:key="osd_show_battery"
+            android:title="显示电池电量"
+            android:summary="叠加电池百分比和充电状态"
+            android:defaultValue="true"
+            android:dependency="enable_osd"/>
+
+        <SwitchPreferenceCompat
+            android:key="osd_show_temp"
+            android:title="显示温度"
+            android:summary="叠加温度信息"
+            android:defaultValue="true"
+            android:dependency="enable_osd"/>
+
+        <ListPreference
+            android:key="temp_sensor"
+            android:title="温度传感器"
+            android:summary="选择要显示的温度来源"
+            android:entries="@array/temp_sensor_entries"
+            android:entryValues="@array/temp_sensor_values"
+            android:defaultValue="battery"
+            android:dependency="osd_show_temp"/>
+
+        <EditTextPreference
+            android:key="osd_custom_text"
+            android:title="自定义文本"
+            android:summary="在水印中显示的自定义内容"
+            android:defaultValue=""
+            android:dependency="enable_osd"/>
+
+        <SeekBarPreference
+            android:key="osd_font_size"
+            android:title="字体大小"
+            android:defaultValue="24"
+            android:max="48"
+            app:min="12"
+            app:showSeekBarValue="true"
+            android:dependency="enable_osd"/>
+
+    </PreferenceCategory>
+    
+    <!-- 夜视增强设置 -->
+    <PreferenceCategory
+        android:key="nightvision_category"
+        android:title="夜视增强">
+
+        <SwitchPreferenceCompat
+            android:key="enable_night_vision"
+            android:title="启用夜视增强"
+            android:summary="提升暗光环境下的画面质量"
+            android:defaultValue="false"/>
+
+        <SwitchPreferenceCompat
+            android:key="night_vision_auto"
+            android:title="自动调整"
+            android:summary="根据画面亮度自动调整增强程度"
+            android:defaultValue="true"
+            android:dependency="enable_night_vision"/>
+
+        <SeekBarPreference
+            android:key="night_vision_brightness"
+            android:title="亮度增强"
+            android:summary="增强画面亮度"
+            android:defaultValue="150"
+            android:max="300"
+            app:min="100"
+            app:showSeekBarValue="true"
+            android:dependency="enable_night_vision"/>
+
+        <SeekBarPreference
+            android:key="night_vision_contrast"
+            android:title="对比度增强"
+            android:summary="增强画面对比度"
+            android:defaultValue="120"
+            android:max="200"
+            app:min="100"
+            app:showSeekBarValue="true"
+            android:dependency="enable_night_vision"/>
+
+        <SeekBarPreference
+            android:key="night_vision_denoise"
+            android:title="降噪强度"
+            android:summary="减少暗光噪点"
+            android:defaultValue="30"
+            android:max="100"
+            app:min="0"
+            app:showSeekBarValue="true"
+            android:dependency="enable_night_vision"/>
+
+    </PreferenceCategory>
+
+    <!-- 高级设置 -->
+    <PreferenceCategory
+        android:key="advanced_category"
+        android:title="@string/advanced_settings">
+
+        <SwitchPreferenceCompat
+            android:key="auto_start"
+            android:title="@string/auto_start"
+            android:summary="@string/auto_start_summary"
+            android:defaultValue="false"/>
+            
+        <SwitchPreferenceCompat
+            android:key="enable_keep_alive"
+            android:title="增强保活"
+            android:summary="使用多种策略确保后台长时间运行"
+            android:defaultValue="true"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
